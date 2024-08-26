@@ -1,0 +1,67 @@
+/* Profile.css */
+
+.profile-container {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #F5F5F5;
+    padding: 40px;
+    min-height: 100vh;
+  }
+  
+  .profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .profile-header h1 {
+    font-size: 2.5rem;
+    color: #4CAF50; /* Green to reflect the agricultural theme */
+  }
+  
+  .profile-header p {
+    font-size: 1.2rem;
+    color: #7CFC00; /* Light green to match the theme */
+  }
+  
+  .profile-details,
+  .tokenized-assets,
+  .transaction-history {
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .profile-footer p {
+    margin: 0;
+  }
+  

@@ -1,0 +1,102 @@
+/* Header.css */
+
+.app-header {
+    background-color: #2F4F4F; /* Dark green/gray agricultural tone */
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .logo-image {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .logo-text {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFD700; /* Golden yellow for contrast */
+  }
+  
+  .nav-links a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  .nav-links a:hover {
+    color: #FFD700;
+  }
+  
+  .auth-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .auth-links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .auth-links a:hover {
+    color: #FFD700;
+  }
+  
+  .welcome-message {
+    margin-right: 15px;
+    color: white;
+    font-weight: 500;
+  }
+  
+  .logout-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .logout-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Responsive Behavior */
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+    }
+  
+    .nav-links {
+      margin-top: 10px;
+    }
+  
+    .nav-links a {
+      margin: 5px 0;
+    }
+  
+    .auth-links {
+      margin-top: 10px;
+    }
+  }
+  

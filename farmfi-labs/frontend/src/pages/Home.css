@@ -1,0 +1,120 @@
+/* Home.css */
+
+.home-container {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #F5F5F5;
+    padding: 40px;
+  }
+  
+  .home-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .home-header h1 {
+    font-size: 2.5rem;
+    color: #4CAF50; /* Green to reflect the agricultural theme */
+  }
+  
+  .home-header p {
+    font-size: 1.2rem;
+    color: #7CFC00; /* Light green to match the theme */
+  }
+  
+  .home-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+  
+  .home-hero .hero-image {
+    max-width: 500px;
+    border-radius: 10px;
+  }
+  
+  .home-intro-text {
+    max-width: 500px;
+    margin-left: 40px;
+  }
+  
+  .home-intro-text h2 {
+    font-size: 2rem;
+    color: #4CAF50;
+  }
+  
+  .home-intro-text p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #333;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .features-section {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .features-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #4CAF50;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .feature-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #4CAF50;
+  }
+  
+  .feature-item p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .feature-link {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .feature-link:hover {
+    text-decoration: underline;
+  }
+  
+  .home-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .home-footer p {
+    margin: 0;
+  }
+  

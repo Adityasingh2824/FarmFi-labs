@@ -1,0 +1,72 @@
+/* Proposal.css */
+
+.proposal-container {
+    padding: 40px;
+    background-color: #F5F5F5;
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    color: #4CAF50;
+    text-align: center;
+  }
+  
+  .proposal-intro {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .message {
+    margin-top: 20px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .create-proposal {
+    margin-bottom: 40px;
+  }
+  
+  .create-proposal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  button:disabled {
+    background-color: #9CCC65;
+    cursor: not-allowed;
+  }
+  
+  .existing-proposals .proposal-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .proposal-item h4 {
+    margin-top: 0;
+  }
+  
+  .proposal-item button {
+    margin-right: 10px;
+  }
+  
