@@ -18,6 +18,7 @@ import Solutions from './pages/Solutions';
 import Products from './pages/Products';
 import About from './pages/About';
 import Settings from './pages/Settings'; // Import Settings page
+import Orders from './pages/Orders'; // Import Orders page if available
 import './App.css';
 
 function App() {
@@ -30,22 +31,34 @@ function App() {
                         <Sidebar />
                         <div className="content">
                             <Routes>
+                                {/* Core Pages */}
                                 <Route path="/" element={<Dashboard />} />
                                 <Route path="/dashboard" element={<Dashboard />} />
+
+                                {/* Tokenization and Oracle Integration */}
                                 <Route path="/tokenization" element={<Tokenization />} />
                                 <Route path="/oracle-integration" element={<OracleIntegration />} />
+
+                                {/* User Profiles and Entities */}
                                 <Route path="/farmers" element={<Farmers />} />
                                 <Route path="/merchants" element={<Merchants />} />
                                 <Route path="/grain-holders" element={<GrainHolders />} />
                                 <Route path="/enterprise" element={<Enterprise />} />
                                 <Route path="/financial-institutions" element={<FinancialInstitutions />} />
+
+                                {/* Authentication */}
                                 <Route path="/login" element={<Login />} />
                                 <Route path="/register" element={<Register />} />
+
+                                {/* Additional Pages */}
                                 <Route path="/solutions" element={<Solutions />} />
                                 <Route path="/products" element={<Products />} />
                                 <Route path="/about" element={<About />} />
+                                <Route path="/orders" element={<Orders />} /> {/* Assuming Orders page exists */}
                                 <Route path="/settings" element={<Settings />} />
-                                {/* Add more routes as needed */}
+
+                                {/* Fallback Route for 404 - Page Not Found */}
+                                <Route path="*" element={<h1>404 - Page Not Found</h1>} />
                             </Routes>
                         </div>
                     </div>
