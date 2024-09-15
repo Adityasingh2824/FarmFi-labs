@@ -1,0 +1,56 @@
+/* MerchantProfile.css */
+.merchant-profile {
+    padding: 20px;
+}
+
+.merchant-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.merchant-details {
+    flex: 1;
+}
+
+.merchant-details h2 {
+    font-size: 28px;
+    color: #033a1c; /* Dark green color */
+}
+
+.merchant-details p {
+    font-size: 16px;
+    color: #555;
+}
+
+.merchant-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.merchant-transactions {
+    margin-top: 30px;
+}
+
+.merchant-transactions h3 {
+    font-size: 22px;
+    color: #033a1c;
+    margin-bottom: 15px;
+}
+
+.merchant-transactions ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.merchant-transactions ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.merchant-transactions ul li span {
+    font-weight: bold;
+    color: #033a1c;
+}

@@ -1,0 +1,40 @@
+/* PoGRStatus.css */
+.pogr-status {
+    padding: 20px;
+}
+
+.pogr-header {
+    margin-bottom: 30px;
+}
+
+.pogr-header h2 {
+    font-size: 28px;
+    color: #033a1c; /* Dark green color */
+    margin-bottom: 20px;
+}
+
+.pogr-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.pogr-audit-reports {
+    margin-top: 30px;
+}
+
+.pogr-audit-reports h3 {
+    font-size: 22px;
+    color: #033a1c;
+    margin-bottom: 15px;
+}
+
+.pogr-audit-reports ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.pogr-audit-reports ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}

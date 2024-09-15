@@ -1,0 +1,47 @@
+/* Solutions.css */
+.solutions {
+    padding: 20px;
+}
+
+.solutions-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.solutions-header h1 {
+    font-size: 36px;
+    color: #033a1c; /* Dark green color */
+    margin-bottom: 15px;
+}
+
+.solutions-header p {
+    font-size: 18px;
+    color: #555;
+}
+
+.solutions-overview {
+    margin-bottom: 40px;
+}
+
+.solutions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.solutions-details {
+    text-align: center;
+}
+
+.solutions-details h2 {
+    font-size: 28px;
+    color: #033a1c;
+    margin-bottom: 20px;
+}
+
+.solutions-details p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}

@@ -1,0 +1,56 @@
+/* FarmerProfile.css */
+.farmer-profile {
+    padding: 20px;
+}
+
+.farmer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.farmer-details {
+    flex: 1;
+}
+
+.farmer-details h2 {
+    font-size: 28px;
+    color: #033a1c; /* Dark green color */
+}
+
+.farmer-details p {
+    font-size: 16px;
+    color: #555;
+}
+
+.farmer-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.farmer-activity {
+    margin-top: 30px;
+}
+
+.farmer-activity h3 {
+    font-size: 22px;
+    color: #033a1c;
+    margin-bottom: 15px;
+}
+
+.farmer-activity ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.farmer-activity ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.farmer-activity ul li span {
+    font-weight: bold;
+    color: #033a1c;
+}

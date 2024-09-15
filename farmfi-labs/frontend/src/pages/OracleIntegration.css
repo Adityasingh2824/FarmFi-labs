@@ -1,0 +1,52 @@
+/* OracleIntegration.css */
+.oracle-integration {
+    padding: 20px;
+}
+
+.oracle-integration-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.oracle-integration-header h1 {
+    font-size: 36px;
+    color: #033a1c; /* Dark green color */
+    margin-bottom: 15px;
+}
+
+.oracle-integration-header p {
+    font-size: 18px;
+    color: #555;
+}
+
+.oracle-status {
+    margin-bottom: 40px;
+}
+
+.oracle-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.oracle-updates {
+    margin-top: 40px;
+}
+
+.oracle-updates h2 {
+    font-size: 28px;
+    color: #033a1c;
+    margin-bottom: 20px;
+}
+
+.oracle-updates ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.oracle-updates ul li {
+    margin-bottom: 10px;
+}

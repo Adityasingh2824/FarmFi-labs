@@ -1,120 +1,90 @@
 /* Home.css */
+.home {
+    padding: 20px;
+}
 
-.home-container {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background-color: #F5F5F5;
-    padding: 40px;
-  }
-  
-  .home-header {
+.hero-section {
+    background-image: url('../assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
     text-align: center;
+    padding: 100px 20px;
     margin-bottom: 40px;
-  }
-  
-  .home-header h1 {
-    font-size: 2.5rem;
-    color: #4CAF50; /* Green to reflect the agricultural theme */
-  }
-  
-  .home-header p {
-    font-size: 1.2rem;
-    color: #7CFC00; /* Light green to match the theme */
-  }
-  
-  .home-intro {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 60px;
-  }
-  
-  .home-hero .hero-image {
-    max-width: 500px;
-    border-radius: 10px;
-  }
-  
-  .home-intro-text {
-    max-width: 500px;
-    margin-left: 40px;
-  }
-  
-  .home-intro-text h2 {
-    font-size: 2rem;
-    color: #4CAF50;
-  }
-  
-  .home-intro-text p {
-    margin-top: 10px;
-    font-size: 1.1rem;
-  }
-  
-  .cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #FFD700;
-    color: #333;
-    text-decoration: none;
-    margin-top: 20px;
-    border-radius: 5px;
-    font-weight: bold;
-  }
-  
-  .features-section {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-  
-  .features-section h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #4CAF50;
-  }
-  
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
-  .feature-item {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  }
-  
-  .feature-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #4CAF50;
-  }
-  
-  .feature-item p {
-    font-size: 1rem;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 48px;
     margin-bottom: 20px;
-  }
-  
-  .feature-link {
-    color: #4CAF50;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    background-color: #a1c045; /* Light green color */
+    color: #fff;
+    padding: 15px 30px;
     text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .feature-link:hover {
-    text-decoration: underline;
-  }
-  
-  .home-footer {
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.hero-button:hover {
+    background-color: #8ea936;
+}
+
+.features-section {
+    margin-bottom: 40px;
     text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  .home-footer p {
-    margin: 0;
-  }
-  
+}
+
+.features-section h2 {
+    font-size: 36px;
+    color: #033a1c; /* Dark green color */
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #033a1c; /* Dark green color */
+    color: #fff;
+}
+
+.cta-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #a1c045; /* Light green color */
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #8ea936;
+}

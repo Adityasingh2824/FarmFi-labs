@@ -1,0 +1,78 @@
+/* Settings.css */
+
+/* General Page Styles */
+.settings-page {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme changes */
+}
+
+.settings-page h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: inherit; /* Inherit color for theme compatibility */
+}
+
+.settings-section {
+    margin-bottom: 20px;
+}
+
+.settings-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: inherit; /* Inherit color for theme compatibility */
+}
+
+/* Notification Preferences */
+.settings-section label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.settings-section input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #a1c045; /* Set checkbox color */
+}
+
+/* Theme Selector */
+.settings-section select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Adjust styles for dark theme */
+.app.dark .settings-page {
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+.app.dark .settings-section select {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+/* Additional Styles */
+.settings-section select:focus {
+    outline: none;
+    border-color: #a1c045; /* Focus color */
+}
+
+.settings-page .settings-section h2:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    margin-top: 5px;
+}
+
+.app.dark .settings-page .settings-section h2:after {
+    background-color: #555;
+}

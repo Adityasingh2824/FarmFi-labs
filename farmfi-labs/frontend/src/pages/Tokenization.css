@@ -1,0 +1,78 @@
+/* Tokenization.css */
+.tokenization {
+    padding: 20px;
+}
+
+.tokenization-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tokenization-header h1 {
+    font-size: 36px;
+    color: #033a1c; /* Dark green color */
+    margin-bottom: 15px;
+}
+
+.tokenization-header p {
+    font-size: 18px;
+    color: #555;
+}
+
+.tokenization-process {
+    margin-bottom: 40px;
+}
+
+.tokenization-overview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tokenization-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.tokenization-form h2 {
+    font-size: 28px;
+    color: #033a1c;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.input-group select,
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.tokenize-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #a1c045; /* Light green color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.tokenize-button:hover {
+    background-color: #8ea936;
+}

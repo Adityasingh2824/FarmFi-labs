@@ -1,0 +1,87 @@
+/* FinancialInstitutions.css */
+.financial-institutions {
+    padding: 20px;
+}
+
+.financial-institutions-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.financial-institutions-header h1 {
+    font-size: 36px;
+    color: #033a1c; /* Dark green color */
+    margin-bottom: 15px;
+}
+
+.financial-institutions-header p {
+    font-size: 18px;
+    color: #555;
+}
+
+.financial-features {
+    margin-bottom: 40px;
+}
+
+.financial-features h2 {
+    font-size: 28px;
+    color: #033a1c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.financial-features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.financial-benefits {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.financial-benefits h2 {
+    font-size: 28px;
+    color: #033a1c;
+    margin-bottom: 20px;
+}
+
+.financial-benefits p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.financial-cta {
+    text-align: center;
+}
+
+.financial-cta h2 {
+    font-size: 28px;
+    color: #033a1c;
+    margin-bottom: 20px;
+}
+
+.financial-cta p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact-us {
+    padding: 15px 30px;
+    background-color: #a1c045; /* Light green color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.contact-us:hover {
+    background-color: #8ea936;
+}
+

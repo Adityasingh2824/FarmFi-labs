@@ -1,0 +1,40 @@
+/* TokenizationInfo.css */
+.tokenization-info {
+    padding: 20px;
+}
+
+.tokenization-header {
+    margin-bottom: 30px;
+}
+
+.tokenization-header h2 {
+    font-size: 28px;
+    color: #033a1c; /* Dark green color */
+    margin-bottom: 20px;
+}
+
+.tokenization-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.tokenization-steps {
+    margin-top: 30px;
+}
+
+.tokenization-steps h3 {
+    font-size: 22px;
+    color: #033a1c;
+    margin-bottom: 15px;
+}
+
+.tokenization-steps ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tokenization-steps ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}

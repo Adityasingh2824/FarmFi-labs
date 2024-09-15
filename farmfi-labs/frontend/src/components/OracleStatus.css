@@ -1,0 +1,40 @@
+/* OracleStatus.css */
+.oracle-status {
+    padding: 20px;
+}
+
+.oracle-header {
+    margin-bottom: 30px;
+}
+
+.oracle-header h2 {
+    font-size: 28px;
+    color: #033a1c; /* Dark green color */
+    margin-bottom: 20px;
+}
+
+.oracle-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.oracle-updates {
+    margin-top: 30px;
+}
+
+.oracle-updates h3 {
+    font-size: 22px;
+    color: #033a1c;
+    margin-bottom: 15px;
+}
+
+.oracle-updates ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.oracle-updates ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}

@@ -1,77 +1,74 @@
 /* Farmers.css */
+.farmers {
+    padding: 20px;
+}
 
-.farmers-container {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background-color: #F5F5F5;
-    padding: 40px;
-    min-height: 100vh;
-  }
-  
-  .farmers-header {
+.farmers-header {
     text-align: center;
     margin-bottom: 40px;
-  }
-  
-  .farmers-header h1 {
-    font-size: 2.5rem;
-    color: #4CAF50; /* Green to reflect the agricultural theme */
-  }
-  
-  .farmers-header p {
-    font-size: 1.2rem;
-    color: #7CFC00; /* Light green to match the theme */
-  }
-  
-  .farmers-features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-bottom: 60px;
-  }
-  
-  .feature-item {
-    background-color: white;
-    padding: 20px;
+}
+
+.farmers-header h1 {
+    font-size: 36px;
+    color: #033a1c; /* Dark green color */
+    margin-bottom: 15px;
+}
+
+.farmers-header p {
+    font-size: 18px;
+    color: #555;
+}
+
+.farmers-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.farmer-card {
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     text-align: center;
-  }
-  
-  .feature-item h3 {
-    font-size: 1.5rem;
-    color: #4CAF50;
+    max-width: 300px;
+    transition: transform 0.2s ease;
+}
+
+.farmer-card:hover {
+    transform: translateY(-5px);
+}
+
+.farmer-image {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.farmer-card h3 {
+    font-size: 24px;
+    color: #033a1c;
     margin-bottom: 10px;
-  }
-  
-  .feature-item p {
-    font-size: 1rem;
+}
+
+.farmer-card p {
+    font-size: 16px;
+    color: #555;
     margin-bottom: 20px;
-  }
-  
-  .cta-button {
+}
+
+.view-profile {
     display: inline-block;
+    margin-top: 10px;
     padding: 10px 20px;
-    background-color: #FFD700;
-    color: #333;
+    background-color: #a1c045; /* Light green color */
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
-  }
-  
-  .cta-button:hover {
-    background-color: #FFC107;
-  }
-  
-  .farmers-footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  .farmers-footer p {
-    margin: 0;
-  }
-  
+}
+
+.view-profile:hover {
+    background-color: #8ea936;
+}

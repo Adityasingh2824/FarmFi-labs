@@ -1,32 +1,32 @@
-/* Merchants.css */
-.merchants {
+/* GrainHolders.css */
+.grain-holders {
     padding: 20px;
 }
 
-.merchants-header {
+.grain-holders-header {
     text-align: center;
     margin-bottom: 40px;
 }
 
-.merchants-header h1 {
+.grain-holders-header h1 {
     font-size: 36px;
     color: #033a1c; /* Dark green color */
     margin-bottom: 15px;
 }
 
-.merchants-header p {
+.grain-holders-header p {
     font-size: 18px;
     color: #555;
 }
 
-.merchants-list {
+.grain-holders-list {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
 }
 
-.merchant-card {
+.grain-holder-card {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -36,39 +36,39 @@
     transition: transform 0.2s ease;
 }
 
-.merchant-card:hover {
+.grain-holder-card:hover {
     transform: translateY(-5px);
 }
 
-.merchant-image {
+.grain-holder-image {
     width: 100%;
     height: auto;
     border-radius: 50%;
     margin-bottom: 15px;
 }
 
-.merchant-card h3 {
+.grain-holder-card h3 {
     font-size: 24px;
     color: #033a1c;
     margin-bottom: 10px;
 }
 
-.merchant-card p {
+.grain-holder-card p {
     font-size: 16px;
     color: #555;
     margin-bottom: 20px;
 }
 
-.view-profile {
-    display: inline-block;
+.view-details {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #a1c045; /* Light green color */
     color: #fff;
-    text-decoration: none;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
-.view-profile:hover {
+.view-details:hover {
     background-color: #8ea936;
 }

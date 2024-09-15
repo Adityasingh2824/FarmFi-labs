@@ -1,0 +1,52 @@
+/* Dashboard.css */
+.dashboard {
+    padding: 20px;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+    font-size: 36px;
+    color: #033a1c; /* Dark green color */
+    margin-bottom: 15px;
+}
+
+.dashboard-header p {
+    font-size: 18px;
+    color: #555;
+}
+
+.dashboard-overview {
+    margin-bottom: 40px;
+}
+
+.dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dashboard-activities {
+    margin-top: 40px;
+}
+
+.dashboard-activities h2 {
+    font-size: 28px;
+    color: #033a1c;
+    margin-bottom: 20px;
+}
+
+.dashboard-activities ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.dashboard-activities ul li {
+    margin-bottom: 10px;
+}

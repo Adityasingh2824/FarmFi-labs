@@ -1,0 +1,46 @@
+/* Orders.css */
+.orders-page {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.orders-page h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #033a1c;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.orders-table th, .orders-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.orders-table th {
+    background-color: #033a1c;
+    color: #fff;
+}
+
+.orders-table tr:hover {
+    background-color: #f2f2f2;
+}
+
+.status-completed {
+    color: green;
+}
+
+.status-pending {
+    color: orange;
+}
+
+.status-cancelled {
+    color: red;
+}

@@ -1,55 +1,59 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Header from './components/Shared/Header';
-import Footer from './components/Shared/Footer';
-import Home from './pages/Home';
-import Login from './components/Auth/Login';
-import Register from './components/Auth/Register';
-import ForgotPassword from './components/Auth/ForgotPassword';
-import FarmerDashboard from './components/Dashboard/FarmerDashboard';
-import MerchantDashboard from './components/Dashboard/MerchantDashboard';
-import DefiDashboard from './components/Dashboard/DefiDashboard';
-import Marketplace from './pages/Marketplace';
-import FarmerProfile from './components/Profile/FarmerProfile';
-import MerchantProfile from './components/Profile/MerchantProfile';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
+import Dashboard from './pages/Dashboard';
+import Tokenization from './pages/Tokenization';
+import OracleIntegration from './pages/OracleIntegration';
+import Farmers from './pages/Farmers';
+import Merchants from './pages/Merchants';
+import GrainHolders from './pages/GrainHolders';
+import Enterprise from './pages/Enterprise';
+import FinancialInstitutions from './pages/FinancialInstitutions';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Solutions from './pages/Solutions';
+import Products from './pages/Products';
+import About from './pages/About';
+import Settings from './pages/Settings'; // Import Settings page
 import './App.css';
 
-const App = () => {
-  const [loading, setLoading] = useState(false);
-
-  // Simulate a loading state if needed in the future
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/marketplace" element={<Marketplace />} />
-
-          {/* Routes for Different Dashboards */}
-          <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
-          <Route path="/merchant-dashboard" element={<MerchantDashboard />} />
-          <Route path="/defi-dashboard" element={<DefiDashboard />} />
-
-          {/* Profile Routes */}
-          <Route path="/farmer-profile" element={<FarmerProfile />} />
-          <Route path="/merchant-profile" element={<MerchantProfile />} />
-
-          {/* Fallback for Unknown Routes */}
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
-  );
-};
+function App() {
+    return (
+        <ThemeProvider>
+            <Router>
+                <div className="app">
+                    <Header />
+                    <div className="main-content">
+                        <Sidebar />
+                        <div className="content">
+                            <Routes>
+                                <Route path="/" element={<Dashboard />} />
+                                <Route path="/dashboard" element={<Dashboard />} />
+                                <Route path="/tokenization" element={<Tokenization />} />
+                                <Route path="/oracle-integration" element={<OracleIntegration />} />
+                                <Route path="/farmers" element={<Farmers />} />
+                                <Route path="/merchants" element={<Merchants />} />
+                                <Route path="/grain-holders" element={<GrainHolders />} />
+                                <Route path="/enterprise" element={<Enterprise />} />
+                                <Route path="/financial-institutions" element={<FinancialInstitutions />} />
+                                <Route path="/login" element={<Login />} />
+                                <Route path="/register" element={<Register />} />
+                                <Route path="/solutions" element={<Solutions />} />
+                                <Route path="/products" element={<Products />} />
+                                <Route path="/about" element={<About />} />
+                                <Route path="/settings" element={<Settings />} />
+                                {/* Add more routes as needed */}
+                            </Routes>
+                        </div>
+                    </div>
+                    <Footer />
+                </div>
+            </Router>
+        </ThemeProvider>
+    );
+}
 
 export default App;

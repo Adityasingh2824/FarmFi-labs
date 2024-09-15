@@ -1,70 +1,117 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+farmfi-labs/
+│
+├── frontend/
+│   ├── public/
+│   │   ├── index.html                    # Main HTML file
+│   │   ├── images/                       # Folder for static images
+│   │   │   ├── logo.png
+│   │   │   ├── background.jpg
+│   │   │   └── ...
+│   │   └── manifest.json                 # Web app manifest file
+│   │
+│   ├── src/
+│   │   ├── assets/
+│   │   │   ├── styles/
+│   │   │   │   ├── main.css              # Global styles
+│   │   │   │   ├── theme.css             # Theme-specific styles
+│   │   │   └── fonts/                    # Custom fonts (if any)
+│   │   │
+│   │   ├── components/                   # Reusable React components
+│   │   │   ├── Header.js                 # Navigation bar component
+│   │   │   ├── Footer.js                 # Footer component
+│   │   │   ├── Sidebar.js                # Sidebar component
+│   │   │   ├── Card.js                   # Card component for UI
+│   │   │   ├── FarmerProfile.js          # Component for Farmer Profile page
+│   │   │   ├── MerchantProfile.js        # Component for Merchant Profile page
+│   │   │   ├── TokenizationInfo.js       # Component to show tokenization details
+│   │   │   ├── PoGRStatus.js             # Component to show Proof of Grain Reserve status
+│   │   │   ├── OracleStatus.js           # Component to display oracle integration status
+│   │   │   └── ...
+│   │   │
+│   │   ├── pages/                        # Main pages for routing
+│   │   │   ├── Home.js                   # Home page
+│   │   │   ├── About.js                  # About page
+│   │   │   ├── Solutions.js              # Solutions page
+│   │   │   ├── Products.js               # Products page
+│   │   │   ├── Farmers.js                # Farmers portal page
+│   │   │   ├── Merchants.js              # Merchants portal page
+│   │   │   ├── GrainHolders.js           # Grain Holders information page
+│   │   │   ├── Enterprise.js             # Enterprise services page
+│   │   │   ├── FinancialInstitutions.js  # Page for financial institutions
+│   │   │   ├── Login.js                  # Login page
+│   │   │   ├── Register.js               # Registration page
+│   │   │   ├── Tokenization.js           # Tokenization process page
+│   │   │   ├── Dashboard.js              # User dashboard page
+│   │   │   ├── OracleIntegration.js      # Page to view and manage oracle integrations
+│   │   │   └── ...
+│   │   │
+│   │   ├── services/                     # Services for API calls and blockchain interaction
+│   │   │   ├── api.js                    # API configuration and functions
+│   │   │   ├── aptos.js                  # Interact with Aptos blockchain
+│   │   │   ├── oracle.js                 # Oracle integration services
+│   │   │   └── ...
+│   │   │
+│   │   ├── utils/                        # Utility functions and constants
+│   │   │   ├── constants.js              # Constants used throughout the app
+│   │   │   ├── helpers.js                # Helper functions
+│   │   │   └── ...
+│   │   │
+│   │   ├── App.js                        # Main App component
+│   │   ├── index.js                      # Entry point for React
+│   │   ├── Router.js                     # React Router setup
+│   │   └── ...
+│   │
+│   ├── .env                              # Environment variables
+│   ├── .gitignore                        # Git ignore file
+│   ├── package.json                      # NPM package file
+│   └── README.md                         # Project documentation
+│
+├── smart_contract/
+│   ├── contracts/
+│   │   ├── GrainToken.move               # Main token contract
+│   │   ├── PoGRCertification.move        # Proof of Grain Reserve contract
+│   │   ├── GovernanceToken.move          # Governance token contract
+│   │   ├── FarmerTokenization.move       # Contract to handle farmer's tokenization process
+│   │   ├── MerchantServices.move         # Contract to handle merchant-related services
+│   │   ├── OracleIntegration.move        # Contract to integrate with oracles for PoGR
+│   │   └── ...
+│   │
+│   ├── scripts/
+│   │   ├── deploy_contracts.js           # Script to deploy contracts
+│   │   ├── interact_contracts.js         # Script to interact with contracts
+│   │   ├── tokenization_script.js        # Script for tokenization interaction
+│   │   ├── oracle_update.js              # Script to update oracle data
+│   │   └── ...
+│   │
+│   ├── tests/
+│   │   ├── GrainToken_test.move          # Test for GrainToken contract
+│   │   ├── PoGRCertification_test.move   # Test for PoGR contract
+│   │   ├── GovernanceToken_test.move     # Test for Governance token contract
+│   │   ├── OracleIntegration_test.move   # Test for Oracle integration contract
+│   │   └── ...
+│   │
+│   ├── build/                            # Compiled bytecode for contracts
+│   ├── aptos_init.sh                     # Script to initialize Aptos environment
+│   ├── oracle_setup.sh                   # Script to set up and integrate oracles
+│   └── README.md                         # Documentation for smart contracts
+│
+├── oracles/                              # Oracles integration
+│   ├── services/
+│   │   ├── grain_reserve_oracle.js       # Service to fetch grain reserve data
+│   │   ├── price_feed_oracle.js          # Service to fetch commodity prices
+│   │   └── ...
+│   │
+│   ├── config/
+│   │   ├── oracle_config.json            # Configuration for oracle endpoints
+│   │   └── ...
+│   │
+│   ├── tests/
+│   │   ├── grain_reserve_oracle_test.js  # Test for grain reserve oracle service
+│   │   ├── price_feed_oracle_test.js     # Test for price feed oracle service
+│   │   └── ...
+│   │
+│   ├── README.md                         # Documentation for oracle integration
+│
+├── .gitignore
+├── README.md
+└── package.json
