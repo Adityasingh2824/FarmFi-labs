@@ -32,7 +32,7 @@
 }
 
 .nav-links a {
-    color: #fff;
+    color: #d02323;
     text-decoration: none;
     font-weight: 500;
     padding: 8px 15px;
@@ -41,7 +41,7 @@
 }
 
 .nav-links a:hover {
-    background-color: #0a472c;
+    background-color: #21e68d;
 }
 
 .header-actions {
@@ -92,7 +92,7 @@
         position: absolute;
         top: 60px; /* Adjusted to align with header */
         right: 0;
-        background-color: #033a1c;
+        background-color: #054b25;
         width: 100%;
         text-align: center;
         padding: 20px;
@@ -116,3 +116,112 @@
         padding: 10px 0;
     }
 }
+
+.header {
+    padding: 1rem;
+    background-color: #033a1c;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .header-container {
+    max-width: 2000px; 
+    margin: 0 auto; 
+    padding: 0 2rem; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+  }
+  
+  .nav {
+    flex-grow: 1; 
+  }
+  
+  .nav-links {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    flex-wrap: wrap; 
+  }
+  
+  .nav-links li {
+    margin-right: 20px; 
+  }
+  
+  .nav-links a {
+    text-decoration: none; 
+    color: #333; 
+    transition: color 0.2s ease; 
+  }
+  
+  .nav-links a:hover {
+    color: #15790a; 
+  }
+  
+  .header-actions {
+    display: flex; 
+    align-items: center; 
+  }
+  
+  .login-btn {
+    margin-right: 10px; 
+  }
+  
+  .menu-toggle {
+    cursor: pointer; 
+  }
+  
+  
+  .nav.active {
+    flex-direction: column; 
+    align-items: flex-start; 
+    background-color: #05f539; 
+    padding: 1rem; 
+    border: 1px solid #18e10a; 
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .nav.active .nav-links {
+    flex-wrap: nowrap; 
+  }
+  
+  .nav.active .nav-links li {
+    margin-bottom: 10px; 
+  
+  }
+  .nav-links li {
+    display: inline-block;
+    margin-right: 20px; /* add some space between links */
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: nowrap; /* prevent links from wrapping to a new line */
+    justify-content: space-between; /* distribute links evenly */
+    display: inline-block;
+    margin-right: 20px; 
+    white-space: nowrap; 
+  }
+  .nav-links li {
+    display: inline-block;
+    margin-right: 20px; 
+    padding: 0 10px; 
+    white-space: nowrap; 
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: nowrap; 
+    justify-content: space-between; 
+  }
+  
+  .nav-links li {
+    flex: 1; 
+    padding: 0 10px; 
+    white-space: nowrap; 
+  }
+  .nav-links li a {
+    color: #fff; /* set text color to white */
+    text-decoration: none; /* remove underline */
+  }
+
+  

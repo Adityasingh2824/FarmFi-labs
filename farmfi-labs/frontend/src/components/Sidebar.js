@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faSeedling, faUser, faShoppingCart, faClipboardList, faCog, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSeedling, faUser, faShoppingCart, faClipboardList, faCog, faBars, faBaby, faMoneyBill, faClock } from '@fortawesome/free-solid-svg-icons';
 import './Sidebar.css';
 
 const Sidebar = () => {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleSidebar = () => {
         setIsOpen(!isOpen);
@@ -48,6 +48,17 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
+                          <Link to="/enterprise"><FontAwesomeIcon icon={faBaby} /><span>Enterprise</span></Link>
+                                 
+                        </li>
+                        <li>
+                        <Link to="/financial-institutions"><FontAwesomeIcon icon={faMoneyBill}></FontAwesomeIcon> <span>Financial-institutions</span></Link>
+                        </li>
+                        <li>
+                        <Link to="/oracle-integration"><FontAwesomeIcon icon={faClock}></FontAwesomeIcon> <span> Oracle Integration</span></Link>
+                        </li>
+                    
+                        <li>
                             <Link to="/settings">
                                 <FontAwesomeIcon icon={faCog} /> <span>Settings</span>
                             </Link>
@@ -58,5 +69,6 @@ const Sidebar = () => {
         </>
     );
 };
+
 
 export default Sidebar;

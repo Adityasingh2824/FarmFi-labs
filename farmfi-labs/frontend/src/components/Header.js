@@ -23,10 +23,8 @@ const Header = () => {
                         <li><Link to="/farmers">Farmers</Link></li>
                         <li><Link to="/merchants">Merchants</Link></li>
                         <li><Link to="/grain-holders">Grain Holders</Link></li>
-                        <li><Link to="/enterprise">Enterprise</Link></li>
-                        <li><Link to="/financial-institutions">Financial Institutions</Link></li>
-                        <li><Link to="/tokenization">Tokenization</Link></li>
-                        <li><Link to="/oracle-integration">Oracle Integration</Link></li>
+                        <li><Link to="/tokenization">Tokenization</Link><center></center></li>
+
                     </ul>
                 </nav>
                 <div className="header-actions">
