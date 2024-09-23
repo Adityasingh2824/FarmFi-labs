@@ -1,20 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Card from '../components/Card';
 import { faSyncAlt, faChartLine, faDatabase } from '@fortawesome/free-solid-svg-icons';
-import './OracleIntegration.css';
+import './OracleIntegration.css'
 
 const OracleIntegration = () => {
-    // Dummy data for demonstration purposes
-    const oracleData = {
-        lastUpdate: "2024-09-08 14:00 UTC",
-        grainPrice: "$200/ton",
-        marketConditions: "Stable",
-        recentUpdates: [
-            "Grain price feed updated.",
-            "Market conditions synchronized.",
-            "New oracle integration added for weather analysis."
-        ]
-    };
+    const [oracleData, setOracleData] = useState({
+        lastUpdate: '',
+        grainPrice: '',
+        marketConditions: '',
+        recentUpdates: []
+    })
+
+    const API_KEY = 'swTxqUSKzWPAOIB8VKvplw==rpjF6KZ6nt0z8YCg'; // Your API key
+    const apiUrl = 'https://api.api-ninjas.com/v1/commodityprice?name=wheat'
+
+    useEffect(() => {
+        const fetchOracleData = async () => {
+            try {
+                const response = await axios.get(apiUrl, {
+                    headers: { 'X-Api-Key': API_KEY }
+                });
+                const data = response.data;
+
+                // Assuming API returns fields like 'lastUpdate', 'grainPrice', 'marketConditions'
+                setOracleData({
+                    lastUpdate: new Date().toISOString(),
+                    grainPrice: `$${data.price}/ton`,
+                    marketConditions: data.marketConditions || "Stable", // If the field is available
+                    recentUpdates: ["Grain price feed updated.", "Market conditions synchronized."]
+                });
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchOracleData();
+    }, []); // Empty dependency array means this runs once after the component mounts
 
     return (
         <div className="oracle-integration">
