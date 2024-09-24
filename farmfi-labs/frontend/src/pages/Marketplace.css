@@ -1,50 +1,71 @@
 .marketplace {
-    padding: 20px;
+    padding: 40px;
     max-width: 1200px;
     margin: 0 auto;
+    font-family: 'Arial', sans-serif;
 }
 
 .marketplace h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 36px;
     text-align: center;
     color: #033a1c;
+    margin-bottom: 40px;
 }
 
 .crops-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .crop-card {
     background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s;
+}
+
+.crop-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .crop-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
     color: #033a1c;
+    margin-bottom: 20px;
 }
 
-.crop-card p {
-    margin: 5px 0;
+.crop-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
     color: #555;
 }
 
+.info-item svg {
+    color: #a1c045;
+    font-size: 20px;
+}
+
 .buy-button {
-    margin-top: 10px;
-    padding: 10px 15px;
+    padding: 12px 20px;
     background-color: #033a1c;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 1.2rem;
     cursor: pointer;
-    font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
 .buy-button:disabled {
@@ -54,4 +75,19 @@
 
 .buy-button:hover:not(:disabled) {
     background-color: #0a472c;
+}
+
+.loading-spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #033a1c;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

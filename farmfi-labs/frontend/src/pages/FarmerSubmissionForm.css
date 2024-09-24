@@ -34,10 +34,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-.form-group input[type="file"] {
-    padding: 5px;
+    font-size: 16px;
 }
 
 .error-message {

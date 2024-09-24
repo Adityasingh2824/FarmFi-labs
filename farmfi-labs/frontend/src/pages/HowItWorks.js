@@ -1,11 +1,15 @@
-// src/pages/HowItWorks.js
 import React from 'react';
-import './HowItWorks.css'; // CSS file for styling
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileAlt, faSeedling, faWarehouse, faShoppingCart, faWallet, faTruck } from '@fortawesome/free-solid-svg-icons';
+import './HowItWorks.css';
 
 const HowItWorks = () => {
     return (
         <div className="how-it-works">
-            <h1>How FarmFi Works</h1>
+            <div className="hero-section">
+                <h1>How FarmFi Works</h1>
+                <p>Discover how our platform helps farmers and merchants securely tokenize and trade agricultural assets.</p>
+            </div>
 
             {/* Farmer's Workflow Section */}
             <section className="workflow-section">
@@ -14,22 +18,34 @@ const HowItWorks = () => {
                 
                 <div className="workflow-steps">
                     <div className="step">
-                        <h3>Step 1: Crop Submission</h3>
-                        <p>Farmers submit crop details such as type, quantity, and location via the submission form.</p>
+                        <div className="step-icon">
+                            <FontAwesomeIcon icon={faFileAlt} />
+                        </div>
+                        <div className="step-content">
+                            <h3>Step 1: Crop Submission</h3>
+                            <p>Farmers submit crop details such as type, quantity, and location via the submission form.</p>
+                        </div>
                     </div>
-                    <div className="step">
-                        <h3>Step 2: Token Generation</h3>
-                        <p>Once the crop is submitted, it is tokenized on the blockchain. Farmers can track the progress through their dashboard.</p>
-                    </div>
-                    <div className="step">
-                        <h3>Step 3: Storage & Delivery</h3>
-                        <p>Farmers can choose to store their crops in certified warehouses. Token holders can later redeem the tokens for physical delivery through FarmFi's logistics partners.</p>
-                    </div>
-                </div>
 
-                {/* Visual representation or infographic for farmer workflow */}
-                <div className="infographic">
-                    <img src="/path-to-your-infographic.png" alt="Farmer Workflow Infographic" />
+                    <div className="step">
+                        <div className="step-icon">
+                            <FontAwesomeIcon icon={faSeedling} />
+                        </div>
+                        <div className="step-content">
+                            <h3>Step 2: Token Generation</h3>
+                            <p>Once the crop is submitted, it is tokenized on the blockchain. Farmers can track the progress through their dashboard.</p>
+                        </div>
+                    </div>
+
+                    <div className="step">
+                        <div className="step-icon">
+                            <FontAwesomeIcon icon={faWarehouse} />
+                        </div>
+                        <div className="step-content">
+                            <h3>Step 3: Storage & Delivery</h3>
+                            <p>Farmers can store crops in certified warehouses. Token holders can redeem the tokens for physical delivery through FarmFi's logistics partners.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -40,22 +56,34 @@ const HowItWorks = () => {
                 
                 <div className="workflow-steps">
                     <div className="step">
-                        <h3>Step 1: Browse Marketplace</h3>
-                        <p>Merchants can view available crops on the marketplace, showing details like crop type, price per ton, and storage location.</p>
+                        <div className="step-icon">
+                            <FontAwesomeIcon icon={faShoppingCart} />
+                        </div>
+                        <div className="step-content">
+                            <h3>Step 1: Browse Marketplace</h3>
+                            <p>Merchants can view available crops on the marketplace, showing details like crop type, price per ton, and storage location.</p>
+                        </div>
                     </div>
-                    <div className="step">
-                        <h3>Step 2: Buy Crop Tokens</h3>
-                        <p>Merchants can purchase tokens representing the crops. These tokens are securely stored in their wallet.</p>
-                    </div>
-                    <div className="step">
-                        <h3>Step 3: Redeem & Delivery</h3>
-                        <p>Merchants can redeem tokens for physical crops, which will be delivered from certified warehouses to the chosen location.</p>
-                    </div>
-                </div>
 
-                {/* Visual representation or infographic for merchant workflow */}
-                <div className="infographic">
-                    <img src="/path-to-your-infographic-merchant.png" alt="Merchant Workflow Infographic" />
+                    <div className="step">
+                        <div className="step-icon">
+                            <FontAwesomeIcon icon={faWallet} />
+                        </div>
+                        <div className="step-content">
+                            <h3>Step 2: Buy Crop Tokens</h3>
+                            <p>Merchants can purchase tokens representing the crops. These tokens are securely stored in their wallet.</p>
+                        </div>
+                    </div>
+
+                    <div className="step">
+                        <div className="step-icon">
+                            <FontAwesomeIcon icon={faTruck} />
+                        </div>
+                        <div className="step-content">
+                            <h3>Step 3: Redeem & Delivery</h3>
+                            <p>Merchants can redeem tokens for physical crops, which will be delivered from certified warehouses to the chosen location.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

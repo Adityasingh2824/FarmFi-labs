@@ -1,67 +1,194 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for routing
-import Card from '../components/Card';
-import { faUniversity, faChartPie, faLock, faChartLine } from '@fortawesome/free-solid-svg-icons';
-import './FinancialInstitutions.css';
+import React, { useState } from 'react';
+import './FarmerSubmissionForm.css';
 
-const FinancialInstitutions = () => {
-    const navigate = useNavigate(); // Initialize navigation
+const FarmerSubmissionForm = () => {
+    // State to manage form inputs
+    const [formData, setFormData] = useState({
+        cropType: '',
+        quantity: '',
+        location: '',
+        deliveryDate: '',
+        warehouse: '',
+        identityProof: null,
+    });
 
-    const handleContactUsClick = () => {
-        navigate('/contact-us'); // Navigate to the Contact Us page
+    // State to manage form errors
+    const [errors, setErrors] = useState({});
+
+    // State for submission success message
+    const [submitted, setSubmitted] = useState(false);
+
+    // Available warehouses as examples
+    const warehouses = ['Warehouse A', 'Warehouse B', 'Warehouse C'];
+
+    // Handle input change and update state
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    // Handle file upload for identity proof
+    const handleFileChange = (e) => {
+        setFormData({
+            ...formData,
+            identityProof: e.target.files[0],
+        });
+    };
+
+    // Validate form before submission
+    const validateForm = () => {
+        let formErrors = {};
+        if (!formData.cropType) {
+            formErrors.cropType = 'Crop type is required';
+        }
+        if (!formData.quantity || formData.quantity <= 0) {
+            formErrors.quantity = 'Quantity should be greater than zero';
+        }
+        if (!formData.location) {
+            formErrors.location = 'Location is required';
+        }
+        if (!formData.deliveryDate) {
+            formErrors.deliveryDate = 'Delivery date is required';
+        }
+        if (!formData.warehouse) {
+            formErrors.warehouse = 'Please select a warehouse';
+        }
+        if (!formData.identityProof) {
+            formErrors.identityProof = 'Please upload your identity proof';
+        }
+
+        return formErrors;
+    };
+
+    // Handle form submission
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formErrors = validateForm();
+
+        // If no errors, submit the form
+        if (Object.keys(formErrors).length === 0) {
+            try {
+                // Simulate submission to the blockchain or backend
+                console.log('Form submitted:', formData);
+
+                // Add your logic here to interact with the backend or blockchain
+                // Example: await submitCropToBlockchain(formData);
+
+                // Reset form and show success message
+                setSubmitted(true);
+                setFormData({
+                    cropType: '',
+                    quantity: '',
+                    location: '',
+                    deliveryDate: '',
+                    warehouse: '',
+                    identityProof: null,
+                });
+            } catch (error) {
+                console.error('Error submitting form:', error);
+            }
+        } else {
+            setErrors(formErrors);
+        }
     };
 
     return (
-        <div className="financial-institutions">
-            <header className="financial-institutions-header">
-                <h1>Solutions for Financial Institutions</h1>
-                <p>FarmFi Labs offers a suite of secure and transparent solutions tailored for financial institutions. Our platform provides opportunities to invest in grain-backed assets, manage transactions securely, and access in-depth market analytics.</p>
-            </header>
+        <div className="farmer-form-container">
+            <h2>Submit Your Crop for Tokenization</h2>
 
-            <section className="financial-features">
-                <h2>Key Features for Financial Institutions</h2>
-                <div className="financial-features-grid">
-                    <Card
-                        title="Grain-Backed Investments"
-                        value="Stable"
-                        icon={faUniversity}
-                        description="Invest in stable, grain-backed tokens that offer a hedge against market volatility."
+            {submitted && <p className="success-message">Crop submitted successfully!</p>}
+
+            <form className="farmer-form" onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <label htmlFor="cropType">Crop Type:</label>
+                    <input
+                        type="text"
+                        id="cropType"
+                        name="cropType"
+                        value={formData.cropType}
+                        onChange={handleChange}
+                        required
                     />
-                    <Card
-                        title="Market Analytics"
-                        value="Insightful"
-                        icon={faChartPie}
-                        description="Access comprehensive market analytics to make informed investment decisions."
-                    />
-                    <Card
-                        title="Secure Transactions"
-                        value="Encrypted"
-                        icon={faLock}
-                        description="Ensure all transactions are secure with our advanced encryption and blockchain technology."
-                    />
-                    <Card
-                        title="Risk Management"
-                        value="Comprehensive"
-                        icon={faChartLine}
-                        description="Utilize risk management tools to safeguard investments and maximize returns."
-                    />
+                    {errors.cropType && <span className="error-message">{errors.cropType}</span>}
                 </div>
-            </section>
 
-            <section className="financial-benefits">
-                <h2>Benefits for Financial Institutions</h2>
-                <p>
-                    Our platform offers financial institutions the ability to diversify portfolios with stable, asset-backed tokens. With FarmFi Labs, you gain access to a secure and transparent marketplace, in-depth analytics, and tools designed to enhance investment strategies and risk management.
-                </p>
-            </section>
+                <div className="form-group">
+                    <label htmlFor="quantity">Quantity (in tons):</label>
+                    <input
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        value={formData.quantity}
+                        onChange={handleChange}
+                        required
+                    />
+                    {errors.quantity && <span className="error-message">{errors.quantity}</span>}
+                </div>
 
-            <section className="financial-cta">
-                <h2>Partner with FarmFi Labs</h2>
-                <p>Ready to explore new opportunities in the agricultural finance sector? Contact us to learn how FarmFi Labs can help your institution harness the power of blockchain technology.</p>
-                <button className="contact-us" onClick={handleContactUsClick}>Contact Us</button> {/* Updated to link to Contact Us */}
-            </section>
+                <div className="form-group">
+                    <label htmlFor="location">Location:</label>
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        value={formData.location}
+                        onChange={handleChange}
+                        required
+                    />
+                    {errors.location && <span className="error-message">{errors.location}</span>}
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="deliveryDate">Expected Delivery Date:</label>
+                    <input
+                        type="date"
+                        id="deliveryDate"
+                        name="deliveryDate"
+                        value={formData.deliveryDate}
+                        onChange={handleChange}
+                        required
+                    />
+                    {errors.deliveryDate && <span className="error-message">{errors.deliveryDate}</span>}
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="warehouse">Select Warehouse:</label>
+                    <select
+                        id="warehouse"
+                        name="warehouse"
+                        value={formData.warehouse}
+                        onChange={handleChange}
+                        required
+                    >
+                        <option value="">Select Warehouse</option>
+                        {warehouses.map((warehouse) => (
+                            <option key={warehouse} value={warehouse}>
+                                {warehouse}
+                            </option>
+                        ))}
+                    </select>
+                    {errors.warehouse && <span className="error-message">{errors.warehouse}</span>}
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="identityProof">Upload Identity Proof (Government-issued):</label>
+                    <input
+                        type="file"
+                        id="identityProof"
+                        name="identityProof"
+                        onChange={handleFileChange}
+                        required
+                    />
+                    {errors.identityProof && <span className="error-message">{errors.identityProof}</span>}
+                </div>
+
+                <button type="submit" className="submit-btn">Submit Crop</button>
+            </form>
         </div>
     );
 };
 
-export default FinancialInstitutions;
+export default FarmerSubmissionForm;

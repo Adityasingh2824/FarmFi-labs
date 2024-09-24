@@ -1,16 +1,38 @@
 /* HowItWorks.css */
 
 .how-it-works {
-    padding: 20px;
+    padding: 40px;
     font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.workflow-section {
+.hero-section {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #033a1c;
+    color: #fff;
+    border-radius: 10px;
     margin-bottom: 40px;
 }
 
+.hero-section h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.workflow-section {
+    margin-bottom: 60px;
+}
+
 .workflow-section h2 {
-    font-size: 24px;
+    font-size: 30px;
+    color: #033a1c;
     margin-bottom: 20px;
 }
 
@@ -21,18 +43,47 @@
 }
 
 .step {
+    display: flex;
+    align-items: center;
     background-color: #f4f4f4;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.step:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.step-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    font-size: 40px;
+    color: #a1c045; /* Light green color for icons */
+}
+
+.step-content h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #033a1c;
+}
+
+.step-content p {
+    font-size: 16px;
+    color: #555;
 }
 
 .infographic {
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: center;
 }
 
 .infographic img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }

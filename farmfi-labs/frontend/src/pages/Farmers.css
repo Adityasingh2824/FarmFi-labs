@@ -1,74 +1,129 @@
 /* Farmers.css */
 .farmers {
-    padding: 20px;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa; /* Light background for contrast */
 }
 
 .farmers-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e3e3e3;
 }
 
 .farmers-header h1 {
-    font-size: 36px;
+    font-size: 2.8rem;
     color: #033a1c; /* Dark green color */
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #a1c045, #5f872d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .farmers-header p {
-    font-size: 18px;
-    color: #555;
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .farmers-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
     justify-content: center;
 }
 
 .farmer-card {
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    max-width: 300px;
-    transition: transform 0.2s ease;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    position: relative;
 }
 
 .farmer-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    height: 220px;
+    background: linear-gradient(135deg, #a1c045, #6a8e36);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .farmer-image {
-    width: 100%;
-    height: auto;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    margin-bottom: 15px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-.farmer-card h3 {
-    font-size: 24px;
+.card-content {
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+}
+
+.card-content h3 {
+    font-size: 1.8rem;
     color: #033a1c;
     margin-bottom: 10px;
 }
 
-.farmer-card p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 20px;
+.card-content p {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+.location, .token-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0;
+    font-weight: 500;
 }
 
 .view-profile {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #a1c045; /* Light green color */
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: #a1c045;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
 }
 
 .view-profile:hover {
     background-color: #8ea936;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .farmers-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .farmers-header p {
+        font-size: 1.1rem;
+    }
+
+    .farmers-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
 }
