@@ -28,11 +28,6 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/tokenization">
-                                <FontAwesomeIcon icon={faSeedling} /> <span>Tokenization</span>
-                            </Link>
-                        </li>
-                        <li>
                             <Link to="/farmers">
                                 <FontAwesomeIcon icon={faUser} /> <span>Farmer Profiles</span>
                             </Link>
@@ -43,8 +38,29 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
+                            <Link to="/oracle-integration">
+                                <FontAwesomeIcon icon={faClock} /> <span>Real Time Grain Prices</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/farmer-submission">
+                                <FontAwesomeIcon icon={faPlusCircle} /> <span>Submit Crop (Farmer)</span>
+                            </Link>
+                        </li>
+                        <li>
                             <Link to="/orders">
                                 <FontAwesomeIcon icon={faClipboardList} /> <span>Orders</span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/Products">
+                                <FontAwesomeIcon icon={faStore} /> <span>Products</span>
+                            </Link>
+                        </li>
+                       
+                        <li>
+                            <Link to="/financial-institutions">
+                                <FontAwesomeIcon icon={faMoneyBill} /> <span>Financial Institutions</span>
                             </Link>
                         </li>
                         <li>
@@ -53,32 +69,14 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/financial-institutions">
-                                <FontAwesomeIcon icon={faMoneyBill} /> <span>Financial Institutions</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/oracle-integration">
-                                <FontAwesomeIcon icon={faClock} /> <span>Oracle Integration</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/how-it-works">
-                                <FontAwesomeIcon icon={faQuestionCircle} /> <span>How It Works</span>
+                            <Link to="/about">
+                                <FontAwesomeIcon icon={faQuestionCircle} /> <span>About Us</span>
                             </Link>
                         </li>
                         {/* Added Farmer Submission Link */}
-                        <li>
-                            <Link to="/farmer-submission">
-                                <FontAwesomeIcon icon={faPlusCircle} /> <span>Submit Crop (Farmer)</span>
-                            </Link>
-                        </li>
+                        
                         {/* Added Marketplace Link */}
-                        <li>
-                            <Link to="/marketplace">
-                                <FontAwesomeIcon icon={faStore} /> <span>Marketplace</span>
-                            </Link>
-                        </li>
+                       
                         <li>
                             <Link to="/settings">
                                 <FontAwesomeIcon icon={faCog} /> <span>Settings</span>

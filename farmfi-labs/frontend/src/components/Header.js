@@ -18,8 +18,8 @@ const Header = () => {
                     <ul className="nav-links">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/solutions">Solutions</Link></li>
-                        <li><Link to="/products">Products</Link></li>
-                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/marketplace">MarketPlace</Link></li>
+                        <li><Link to="/how-it-works">How It Works</Link></li>
                         <li><Link to="/farmers">Farmers</Link></li>
                         <li><Link to="/merchants">Merchants</Link></li>
                         <li><Link to="/grain-holders">Grain Holders</Link></li>
