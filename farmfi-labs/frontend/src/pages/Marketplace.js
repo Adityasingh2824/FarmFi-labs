@@ -1,59 +1,98 @@
-import React, { useEffect, useState } from 'react';
-import MarketplaceService from '../services/MarketplaceService';
-import './Marketplace.css'; // Assuming a CSS file for marketplace-specific styling
+import React, { useState, useEffect } from 'react';
+import './Marketplace.css'; // Custom CSS for styling
 
 const Marketplace = () => {
-  const [grainTokens, setGrainTokens] = useState([]);
-  const [loading, setLoading] = useState(true);
+    const [crops, setCrops] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [selectedCrop, setSelectedCrop] = useState(null); // To manage the purchase of the selected crop
 
-  useEffect(() => {
-    const fetchGrainTokens = async () => {
-      try {
-        const tokens = await MarketplaceService.getAvailableGrainTokens();
-        setGrainTokens(tokens);
-      } catch (error) {
-        console.error('Failed to fetch grain tokens', error);
-      } finally {
-        setLoading(false);
-      }
+    // Simulate fetching crops with mock demo data
+    useEffect(() => {
+        const fetchCrops = () => {
+            try {
+                // Demo data simulating crop listings
+                const demoData = [
+                    {
+                        id: 1,
+                        type: 'Wheat',
+                        price: 300,
+                        quantity: 50,
+                        location: 'Warehouse A',
+                    },
+                    {
+                        id: 2,
+                        type: 'Corn',
+                        price: 250,
+                        quantity: 80,
+                        location: 'Warehouse B',
+                    },
+                    {
+                        id: 3,
+                        type: 'Rice',
+                        price: 400,
+                        quantity: 60,
+                        location: 'Warehouse C',
+                    },
+                ];
+
+                setCrops(demoData);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching crops:', error);
+                setError('Error fetching crop data.');
+                setLoading(false);
+            }
+        };
+
+        fetchCrops();
+    }, []);
+
+    // Handle purchasing tokens for a specific crop
+    const handlePurchase = (cropId) => {
+        try {
+            // Simulate purchase logic
+            console.log(`Buying tokens for crop with ID: ${cropId}`);
+            setSelectedCrop(cropId); // Mark the crop as purchased
+        } catch (error) {
+            console.error('Error purchasing tokens:', error);
+        }
     };
-    fetchGrainTokens();
-  }, []);
 
-  return (
-    <div className="marketplace-container">
-      <header className="marketplace-header">
-        <h1>Marketplace</h1>
-        <p>Buy and sell tokenized agricultural commodities directly on the blockchain.</p>
-      </header>
+    if (loading) {
+        return <p>Loading crops...</p>;
+    }
 
-      {loading ? (
-        <div className="loading">
-          <p>Loading available commodities...</p>
+    if (error) {
+        return <p>{error}</p>;
+    }
+
+    return (
+        <div className="marketplace">
+            <h1>Tokenized Crops Marketplace</h1>
+            <div className="crops-list">
+                {crops.length === 0 ? (
+                    <p>No crops available for sale.</p>
+                ) : (
+                    crops.map((crop) => (
+                        <div key={crop.id} className="crop-card">
+                            <h3>{crop.type}</h3>
+                            <p>Price per ton: ${crop.price}</p>
+                            <p>Available Quantity: {crop.quantity} tons</p>
+                            <p>Storage Location: {crop.location}</p>
+                            <button
+                                className="buy-button"
+                                onClick={() => handlePurchase(crop.id)}
+                                disabled={selectedCrop === crop.id} // Disable button if already purchased
+                            >
+                                {selectedCrop === crop.id ? 'Purchased' : 'Buy Tokens'}
+                            </button>
+                        </div>
+                    ))
+                )}
+            </div>
         </div>
-      ) : (
-        <section className="marketplace-grid">
-          {grainTokens.length > 0 ? (
-            grainTokens.map((token) => (
-              <div key={token.id} className="grain-token-item">
-                <h3>{token.name}</h3>
-                <p>Price: {token.price} USD per token</p>
-                <p>Available Supply: {token.availableSupply} tokens</p>
-                <button className="buy-button">Buy</button>
-                <button className="sell-button">Sell</button>
-              </div>
-            ))
-          ) : (
-            <p>No commodities available at the moment.</p>
-          )}
-        </section>
-      )}
-
-      <footer className="marketplace-footer">
-        <p>&copy; 2024 FarmFi Labs. Empowering agriculture with blockchain technology.</p>
-      </footer>
-    </div>
-  );
+    );
 };
 
 export default Marketplace;

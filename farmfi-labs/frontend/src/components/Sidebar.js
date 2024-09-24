@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faSeedling, faUser, faShoppingCart, faClipboardList, faCog, faBars, faBaby, faMoneyBill, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSeedling, faUser, faShoppingCart, faClipboardList, faCog, faBars, faBaby, faMoneyBill, faClock, faQuestionCircle, faStore, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import './Sidebar.css';
 
 const Sidebar = () => {
@@ -48,27 +48,48 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
-                          <Link to="/enterprise"><FontAwesomeIcon icon={faBaby} /><span>Enterprise</span></Link>
-                                 
+                            <Link to="/enterprise">
+                                <FontAwesomeIcon icon={faBaby} /> <span>Enterprise</span>
+                            </Link>
                         </li>
                         <li>
-                        <Link to="/financial-institutions"><FontAwesomeIcon icon={faMoneyBill}></FontAwesomeIcon> <span>Financial-institutions</span></Link>
+                            <Link to="/financial-institutions">
+                                <FontAwesomeIcon icon={faMoneyBill} /> <span>Financial Institutions</span>
+                            </Link>
                         </li>
                         <li>
-                        <Link to="/oracle-integration"><FontAwesomeIcon icon={faClock}></FontAwesomeIcon> <span> Oracle Integration</span></Link>
+                            <Link to="/oracle-integration">
+                                <FontAwesomeIcon icon={faClock} /> <span>Oracle Integration</span>
+                            </Link>
                         </li>
-                    
+                        <li>
+                            <Link to="/how-it-works">
+                                <FontAwesomeIcon icon={faQuestionCircle} /> <span>How It Works</span>
+                            </Link>
+                        </li>
+                        {/* Added Farmer Submission Link */}
+                        <li>
+                            <Link to="/farmer-submission">
+                                <FontAwesomeIcon icon={faPlusCircle} /> <span>Submit Crop (Farmer)</span>
+                            </Link>
+                        </li>
+                        {/* Added Marketplace Link */}
+                        <li>
+                            <Link to="/marketplace">
+                                <FontAwesomeIcon icon={faStore} /> <span>Marketplace</span>
+                            </Link>
+                        </li>
                         <li>
                             <Link to="/settings">
                                 <FontAwesomeIcon icon={faCog} /> <span>Settings</span>
                             </Link>
                         </li>
+                        
                     </ul>
                 </nav>
             </aside>
         </>
     );
 };
-
 
 export default Sidebar;

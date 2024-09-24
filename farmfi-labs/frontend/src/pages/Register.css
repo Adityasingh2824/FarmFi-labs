@@ -1,6 +1,6 @@
 /* Register.css */
 .register-container {
-    max-width: 400px;
+    max-width: 450px; /* Increased width to accommodate new fields */
     margin: 0 auto;
     padding: 40px;
     background-color: #fff;
@@ -27,12 +27,43 @@
     margin-bottom: 5px;
 }
 
-.input-group input {
+.input-group input,
+.input-group select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+}
+
+/* Customize select dropdown */
+.input-group select {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Identity Proof Upload */
+.input-group input[type="file"] {
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Wallet Connect Button */
+.wallet-connect-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f9a825; /* Bright yellow for visibility */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.wallet-connect-button:hover {
+    background-color: #f57f17; /* Darker yellow on hover */
 }
 
 .register-button {
@@ -44,12 +75,21 @@
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .register-button:hover {
     background-color: #8ea936;
 }
 
+/* Wallet Address Display */
+.wallet-address {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Footer Links */
 .register-footer {
     margin-top: 20px;
 }

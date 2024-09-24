@@ -1,0 +1,38 @@
+/* HowItWorks.css */
+
+.how-it-works {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.workflow-section {
+    margin-bottom: 40px;
+}
+
+.workflow-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.workflow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.step {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.infographic {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.infographic img {
+    max-width: 100%;
+    height: auto;
+}

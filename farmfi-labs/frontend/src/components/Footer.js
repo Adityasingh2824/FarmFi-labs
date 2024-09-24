@@ -18,8 +18,8 @@ const Footer = () => {
                         <li><Link to="/solutions">Solutions</Link></li>
                         <li><Link to="/products">Products</Link></li>
                         <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/news">Agrotech News</Link></li>
-                        <li><Link to="/contact">Contact Us</Link></li>
+                        <li><Link to="/news">Agrotech News</Link></li> {/* Link to the Agrotech News page */}
+                        <li><Link to="/contact-us">Contact Us</Link></li> {/* Corrected the Contact Us link */}
                     </ul>
                 </div>
                 <div className="footer-social">

@@ -1,84 +1,57 @@
-/* Marketplace.css */
-
-.marketplace-container {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background-color: #F5F5F5;
-    padding: 40px;
-    min-height: 100vh;
-  }
-  
-  .marketplace-header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  .marketplace-header h1 {
-    font-size: 2.5rem;
-    color: #4CAF50; /* Green to reflect the agricultural theme */
-  }
-  
-  .marketplace-header p {
-    font-size: 1.2rem;
-    color: #7CFC00; /* Light green to match the theme */
-  }
-  
-  .loading {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #333;
-  }
-  
-  .marketplace-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .grain-token-item {
-    background-color: white;
+.marketplace {
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.marketplace h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
     text-align: center;
-  }
-  
-  .grain-token-item h3 {
+    color: #033a1c;
+}
+
+.crops-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.crop-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.crop-card h3 {
     font-size: 1.5rem;
-    color: #4CAF50;
     margin-bottom: 10px;
-  }
-  
-  .grain-token-item p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-  
-  .buy-button,
-  .sell-button {
-    background-color: #FFD700;
-    color: #333;
+    color: #033a1c;
+}
+
+.crop-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.buy-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #033a1c;
+    color: #fff;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    margin: 10px;
-  }
-  
-  .buy-button:hover,
-  .sell-button:hover {
-    background-color: #FFC107;
-  }
-  
-  .marketplace-footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  .marketplace-footer p {
-    margin: 0;
-  }
-  
+    font-size: 1rem;
+}
+
+.buy-button:disabled {
+    background-color: #8da034;
+    cursor: not-allowed;
+}
+
+.buy-button:hover:not(:disabled) {
+    background-color: #0a472c;
+}
