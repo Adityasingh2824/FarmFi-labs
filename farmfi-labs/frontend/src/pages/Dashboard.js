@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../components/Card';
-import { faSeedling, faCoins, faUsers, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faSeedling, faCoins, faUsers, faShoppingCart, faHistory } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Importing FontAwesomeIcon
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -20,8 +21,10 @@ const Dashboard = () => {
     return (
         <div className="dashboard">
             <header className="dashboard-header">
-                <h1>Dashboard</h1>
-                <p>Welcome to your FarmFi Labs Dashboard. Get an overview of your assets, recent activities, and key metrics of the platform.</p>
+                <div className="header-overlay">
+                    <h1>FarmFi Dashboard</h1>
+                    <p>Monitor your farm's tokenized assets, see recent activities, and track performance metrics, all in one place.</p>
+                </div>
             </header>
 
             <section className="dashboard-overview">
@@ -30,34 +33,40 @@ const Dashboard = () => {
                         title="Total Tokenized"
                         value={dashboardData.totalTokenized}
                         icon={faCoins}
-                        description="Total tokens backed by grain reserves."
+                        description="Grain assets tokenized on the platform."
                     />
                     <Card
-                        title="Grain Reserve"
+                        title="Total Grain Reserve"
                         value={dashboardData.totalGrainReserve}
                         icon={faSeedling}
-                        description="Current total grain reserves in the platform."
+                        description="Amount of grain reserves secured."
                     />
                     <Card
                         title="Active Farmers"
                         value={dashboardData.activeFarmers}
                         icon={faUsers}
-                        description="Number of farmers actively participating in the platform."
+                        description="Farmers contributing to the platform."
                     />
                     <Card
                         title="Active Merchants"
                         value={dashboardData.activeMerchants}
                         icon={faShoppingCart}
-                        description="Number of merchants actively trading on the platform."
+                        description="Merchants trading on the platform."
                     />
                 </div>
             </section>
 
             <section className="dashboard-activities">
-                <h2>Recent Activities</h2>
+                <div className="activity-header">
+                    <FontAwesomeIcon icon={faHistory} className="activity-icon" /> {/* Using FontAwesomeIcon */}
+                    <h2>Recent Activities</h2>
+                </div>
                 <ul>
                     {dashboardData.recentActivities.map((activity, index) => (
-                        <li key={index}>{activity}</li>
+                        <li key={index} className="activity-item">
+                            <span>{activity}</span>
+                            <div className="activity-date">Today</div> {/* Mock date */}
+                        </li>
                     ))}
                 </ul>
             </section>

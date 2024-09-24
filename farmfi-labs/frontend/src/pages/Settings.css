@@ -1,78 +1,116 @@
-/* Settings.css */
-
-/* General Page Styles */
-.settings-page {
+/* General Page Styling */
+.solutions {
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme changes */
+    font-family: 'Roboto', sans-serif;
+    color: #033a1c;
+    background-color: #f4f4f4; /* Light background for better contrast */
 }
 
-.settings-page h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: inherit; /* Inherit color for theme compatibility */
-}
-
-.settings-section {
-    margin-bottom: 20px;
-}
-
-.settings-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: inherit; /* Inherit color for theme compatibility */
-}
-
-/* Notification Preferences */
-.settings-section label {
+/* Enhanced Header Section */
+.solutions-header {
+    position: relative;
+    background-image: url('/assets/solutions-bg.jpg'); /* Add a relevant background image */
+    background-size: cover;
+    background-position: center;
+    height: 300px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    cursor: pointer;
+    color: #fff;
 }
 
-.settings-section input[type="checkbox"] {
-    margin-right: 10px;
-    accent-color: #a1c045; /* Set checkbox color */
+.solutions-header .header-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
 }
 
-/* Theme Selector */
-.settings-section select {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+.solutions-header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.solutions-header p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Solutions Overview Section */
+.solutions-overview {
+    padding: 40px 20px;
+    background-color: #fff;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.solutions-overview h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #033a1c;
+}
+
+/* Solutions Grid */
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+/* Why Choose Us Section */
+.solutions-details {
+    padding: 40px 20px;
+    text-align: center;
     background-color: #f9f9f9;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px;
 }
 
-/* Adjust styles for dark theme */
-.app.dark .settings-page {
-    background-color: #1c1c1c;
+.solutions-details h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.solutions-details p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #a1c045;
     color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.app.dark .settings-section select {
-    background-color: #333;
-    color: #fff;
-    border-color: #555;
+.cta-button:hover {
+    background-color: #8ea936;
 }
 
-/* Additional Styles */
-.settings-section select:focus {
-    outline: none;
-    border-color: #a1c045; /* Focus color */
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .solutions-header h1 {
+        font-size: 32px;
+    }
 
-.settings-page .settings-section h2:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: #ddd;
-    margin-top: 5px;
-}
+    .solutions-overview h2,
+    .solutions-details h2 {
+        font-size: 28px;
+    }
 
-.app.dark .settings-page .settings-section h2:after {
-    background-color: #555;
+    .solutions-grid {
+        grid-template-columns: 1fr;
+    }
 }

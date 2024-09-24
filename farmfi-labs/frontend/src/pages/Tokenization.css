@@ -1,26 +1,41 @@
 /* Tokenization.css */
 .tokenization {
-    padding: 20px;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Light background for contrast */
 }
 
-.tokenization-header {
+/* Hero Section */
+.hero-section {
     text-align: center;
-    margin-bottom: 40px;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #a1c045, #033a1c);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 50px;
 }
 
-.tokenization-header h1 {
-    font-size: 36px;
-    color: #033a1c; /* Dark green color */
-    margin-bottom: 15px;
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
-.tokenization-header p {
-    font-size: 18px;
-    color: #555;
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
+/* Tokenization Process Section */
 .tokenization-process {
     margin-bottom: 40px;
+}
+
+.tokenization-process h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #033a1c;
+    margin-bottom: 30px;
 }
 
 .tokenization-overview {
@@ -30,49 +45,103 @@
     gap: 20px;
 }
 
-.tokenization-form {
-    max-width: 400px;
-    margin: 0 auto;
+/* Tokenization Steps */
+.process-bar {
+    margin: 50px 0;
+    text-align: center;
 }
 
-.tokenization-form h2 {
-    font-size: 28px;
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.step {
+    background: #e9e9e9;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.step.active {
+    background-color: #a1c045;
+    color: #fff;
+}
+
+/* Tokenization Form */
+.tokenization-form-container {
+    margin-top: 50px;
+}
+
+.tokenization-form-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.tokenization-form-card h2 {
+    font-size: 2.2rem;
     color: #033a1c;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .input-group {
     margin-bottom: 20px;
-    text-align: left;
 }
 
 .input-group label {
-    display: block;
-    font-size: 16px;
+    font-size: 1rem;
     color: #555;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    display: block;
 }
 
 .input-group select,
 .input-group input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .tokenize-button {
     width: 100%;
     padding: 15px;
-    background-color: #a1c045; /* Light green color */
+    background-color: #a1c045;
     color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .tokenize-button:hover {
     background-color: #8ea936;
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .tokenization-overview {
+        flex-direction: column;
+    }
+
+    .steps {
+        flex-direction: column;
+    }
 }

@@ -13,31 +13,35 @@ const Merchants = () => {
             name: "Green Valley Grain",
             location: "Kansas, USA",
             totalInventory: "1,200 Tons",
-            profileImage: "/assets/images/merchant1.jpg"
+            profileImage: "/assets/farmer1.jpg"
         },
         {
             id: 2,
             name: "Harvest Hub",
             location: "Iowa, USA",
             totalInventory: "850 Tons",
-            profileImage: "/assets/images/merchant2.jpg"
+            profileImage: "/assets/farmer2.jpg"
         },
         {
             id: 3,
             name: "Global Grain Traders",
             location: "Ontario, Canada",
             totalInventory: "1,500 Tons",
-            profileImage: "/assets/images/merchant3.jpg"
+            profileImage: "/assets/farmer3.jpg"
         }
     ];
 
     return (
         <div className="merchants">
+            {/* Hero Section */}
             <header className="merchants-header">
-                <h1>Our Merchants</h1>
-                <p>Discover the merchants who are part of the FarmFi Labs ecosystem. Learn how they are utilizing our platform to manage and trade their grain inventory efficiently and securely.</p>
+                <div className="header-overlay">
+                    <h1>Our Merchants</h1>
+                    <p>Discover how our merchants efficiently manage and trade their grain inventory with the power of FarmFi Labs.</p>
+                </div>
             </header>
 
+            {/* Merchants List Section */}
             <section className="merchants-list">
                 {merchantsList.map(merchant => (
                     <div className="merchant-card" key={merchant.id}>
