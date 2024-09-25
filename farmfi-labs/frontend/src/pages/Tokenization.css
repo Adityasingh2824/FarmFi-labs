@@ -5,14 +5,17 @@
     background-color: #f8f9fa; /* Light background for contrast */
 }
 
+
 /* Hero Section */
 .hero-section {
+    max-width: 1000px;
     text-align: center;
-    padding: 60px 20px;
+    padding: 40px;
     background: linear-gradient(135deg, #a1c045, #033a1c);
     color: white;
     border-radius: 10px;
     margin-bottom: 50px;
+    margin: 0 auto;
 }
 
 .hero-section h1 {

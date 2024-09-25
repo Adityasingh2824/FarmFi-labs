@@ -1,6 +1,7 @@
 /* OracleIntegration.css */
 .oracle-integration {
-    padding: 20px;
+    max-width: 1200px;
+        padding: 20px;
 }
 
 .oracle-integration-header {
