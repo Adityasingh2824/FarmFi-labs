@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
 import { faUniversity, faChartPie, faLock, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import './FinancialInstitutions.css';
 
 const FinancialInstitutions = () => {
+    const navigate = useNavigate(); // useNavigate hook for programmatic navigation
+
+    const handleContactUsClick = () => {
+        navigate('/contactus'); // Navigate to Contact Us page
+    };
+
     return (
         <div className="financial-institutions">
             {/* Hero Section */}
@@ -57,7 +64,9 @@ const FinancialInstitutions = () => {
             <section className="financial-cta">
                 <h2>Partner with FarmFi Labs</h2>
                 <p>Explore how FarmFi Labs can help your institution leverage blockchain technology in agricultural finance. Contact us to get started.</p>
-                <button className="contact-us">Contact Us</button>
+                <button className="contact-us" onClick={() => navigate('/contact-us')}> {/* Navigate to Contact Us page */}
+                    Contact Us
+                </button>
             </section>
         </div>
     );

@@ -1,22 +1,24 @@
-/* Merchants.css */
-.merchants {
+.merchants-container {
     padding: 20px;
 }
 
 .merchants-header {
     text-align: center;
     margin-bottom: 40px;
+    background-color: #033a1c;
+    color: white;
+    padding: 40px 0;
 }
 
 .merchants-header h1 {
     font-size: 36px;
-    color: #033a1c; /* Dark green color */
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .merchants-header p {
     font-size: 18px;
-    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .merchants-list {
@@ -29,15 +31,16 @@
 .merchant-card {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    max-width: 300px;
-    transition: transform 0.2s ease;
+    max-width: 280px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .merchant-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .merchant-image {
@@ -56,19 +59,57 @@
 .merchant-card p {
     font-size: 16px;
     color: #555;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+.inventory {
+    font-size: 16px;
+    margin-bottom: 15px;
 }
 
 .view-profile {
-    display: inline-block;
-    margin-top: 10px;
     padding: 10px 20px;
-    background-color: #a1c045; /* Light green color */
-    color: #fff;
-    text-decoration: none;
+    background-color: #a1c045;
+    color: white;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .view-profile:hover {
     background-color: #8ea936;
+}
+
+.merchant-profile {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.profile-details h2 {
+    font-size: 28px;
+    color: #033a1c;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
 }

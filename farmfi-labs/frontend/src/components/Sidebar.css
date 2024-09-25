@@ -6,7 +6,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding-top: 20px;
+    padding-top: 10px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     transition: width 0.3s ease;
     z-index: 1000; /* Ensure the sidebar is above the content */
@@ -38,7 +38,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding-left: 20px; /* Added padding for alignment */
+    padding-left: 1px; /* Added padding for alignment */
 }
 
 .sidebar-nav ul {
@@ -96,7 +96,7 @@
 /* Adjust for smaller screens */
 @media (max-width: 768px) {
     .sidebar {
-        width: 60px;
+        width: 10px;
     }
 
     .sidebar.open {
@@ -108,6 +108,6 @@
     }
 
     .sidebar-nav ul li a {
-        padding: 10px 15px;
+        padding: 1px 1px;
     }
 }

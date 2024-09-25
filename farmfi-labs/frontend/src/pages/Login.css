@@ -1,18 +1,25 @@
-/* Login.css */
+/* General Styles */
 .login-container {
     max-width: 400px;
-    margin: 0 auto;
+    margin: 50px auto;
     padding: 40px;
-    background-color: #fff;
+    background-color: #f7f7f7;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
+    font-family: 'Arial', sans-serif;
 }
 
 .login-container h2 {
-    font-size: 28px;
-    color: #033a1c; /* Dark green color */
-    margin-bottom: 20px;
+    font-size: 32px;
+    color: #033a1c;
+    margin-bottom: 10px;
+}
+
+.login-container p {
+    color: #777;
+    margin-bottom: 30px;
+    font-size: 16px;
 }
 
 .input-group {
@@ -22,34 +29,54 @@
 
 .input-group label {
     display: block;
-    font-size: 16px;
-    color: #555;
+    font-size: 14px;
+    color: #333;
     margin-bottom: 5px;
 }
 
 .input-group input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
+.input-group input:focus {
+    border-color: #a1c045;
+    outline: none;
+    box-shadow: 0 0 5px rgba(161, 192, 69, 0.5);
+}
+
+/* Error Message Styling */
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Login Button */
 .login-button {
     width: 100%;
-    padding: 15px;
-    background-color: #a1c045; /* Light green color */
+    padding: 14px;
+    background-color: #a1c045;
     color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .login-button:hover {
     background-color: #8ea936;
 }
 
+/* Footer Links */
 .login-footer {
     margin-top: 20px;
 }
@@ -62,4 +89,19 @@
 
 .login-footer a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .login-container {
+        padding: 30px;
+    }
+
+    .login-container h2 {
+        font-size: 28px;
+    }
+
+    .login-button {
+        font-size: 16px;
+    }
 }

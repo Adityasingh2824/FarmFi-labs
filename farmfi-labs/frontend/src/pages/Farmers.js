@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSeedling, faMapMarkerAlt, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import './Farmers.css';
@@ -12,23 +11,38 @@ const Farmers = () => {
             name: "Ramu Kaka",
             location: "Kansas, USA",
             totalTokens: "500 Tokens",
-            profileImage: "/assets/farmer1.jpg"
+            profileImage: "/assets/farmer1.jpg",
+            bio: "Ramu has been farming for over 20 years, specializing in grain and corn.",
+            farmSize: "120 Acres",
+            crops: "Grain, Corn",
         },
         {
             id: 2,
             name: "Mary Smith",
             location: "Iowa, USA",
             totalTokens: "350 Tokens",
-            profileImage: "/assets/farmer2.jpg"
+            profileImage: "/assets/farmer2.jpg",
+            bio: "Mary has introduced sustainable farming techniques and is an advocate of organic farming.",
+            farmSize: "90 Acres",
+            crops: "Organic Vegetables, Wheat",
         },
         {
             id: 3,
             name: "Carlos Gomez",
             location: "Buenos Aires, Argentina",
             totalTokens: "700 Tokens",
-            profileImage: "/assets/farmer3.jpg"
+            profileImage: "/assets/farmer3.jpg",
+            bio: "Carlos runs one of the largest grain farms in Argentina with modern agricultural practices.",
+            farmSize: "200 Acres",
+            crops: "Grain, Soybeans",
         }
     ];
+
+    const [selectedFarmer, setSelectedFarmer] = useState(null);
+
+    const handleViewProfile = (id) => {
+        setSelectedFarmer(selectedFarmer === id ? null : id);
+    };
 
     return (
         <div className="farmers">
@@ -39,7 +53,7 @@ const Farmers = () => {
 
             <section className="farmers-list">
                 {farmersList.map(farmer => (
-                    <div className="farmer-card" key={farmer.id}>
+                    <div className={`farmer-card ${selectedFarmer === farmer.id ? 'active' : ''}`} key={farmer.id}>
                         <div className="card-header">
                             <img src={farmer.profileImage} alt={farmer.name} className="farmer-image" />
                         </div>
@@ -47,9 +61,20 @@ const Farmers = () => {
                             <h3>{farmer.name}</h3>
                             <p className="location"><FontAwesomeIcon icon={faMapMarkerAlt} /> {farmer.location}</p>
                             <p className="token-info"><FontAwesomeIcon icon={faSeedling} /> Total Tokens: {farmer.totalTokens}</p>
-                            <Link to={`/farmers/${farmer.id}`} className="view-profile">
-                                <FontAwesomeIcon icon={faInfoCircle} /> View Profile
-                            </Link>
+                            <button
+                                className="view-profile"
+                                onClick={() => handleViewProfile(farmer.id)}
+                            >
+                                <FontAwesomeIcon icon={faInfoCircle} /> {selectedFarmer === farmer.id ? "Hide Profile" : "View Profile"}
+                            </button>
+
+                            {selectedFarmer === farmer.id && (
+                                <div className="farmer-details">
+                                    <p><strong>Bio:</strong> {farmer.bio}</p>
+                                    <p><strong>Farm Size:</strong> {farmer.farmSize}</p>
+                                    <p><strong>Crops:</strong> {farmer.crops}</p>
+                                </div>
+                            )}
                         </div>
                     </div>
                 ))}
