@@ -51,17 +51,17 @@ const About = () => {
                     <div className="team-member">
                         <img src="/assets/images/team-member2.jpg" alt="Manav Goyal" />
                         <h3>Manav Goyal</h3>
-                        <p>CTO</p>
+                        <p>Founder & CTO</p>
                     </div>
                     <div className="team-member">
                         <img src="/assets/images/team-member3.jpg" alt="Yash Karakoti" />
                         <h3>Yash Karakoti</h3>
-                        <p>Head of Blockchain Development</p>
+                        <p>Founder & Head of Blockchain Development</p>
                     </div>
                     <div className="team-member">
                         <img src="/assets/images/team-member4.jpg" alt="Aayush Jha" />
                         <h3>Aayush Jha</h3>
-                        <p>Lead Developer</p>
+                        <p>Founder & Lead Developer</p>
                     </div>
                 </div>
             </section>
