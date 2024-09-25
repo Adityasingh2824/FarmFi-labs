@@ -4,6 +4,8 @@
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    max-width: 1250px;
+    padding-left: 150px;
 }
 
 .dark-mode {

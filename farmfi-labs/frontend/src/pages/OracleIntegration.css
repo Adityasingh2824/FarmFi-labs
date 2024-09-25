@@ -2,22 +2,31 @@
 .oracle-integration {
     max-width: 1200px;
         padding: 20px;
+        padding-left: 150px;
 }
 
 .oracle-integration-header {
     text-align: center;
     margin-bottom: 40px;
+    max-width: 1000px;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #a1c045, #033a1c);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    margin: 0 auto;
 }
 
 .oracle-integration-header h1 {
     font-size: 36px;
-    color: #033a1c; /* Dark green color */
+    color: #ffffff; /* Dark green color */
     margin-bottom: 15px;
 }
 
 .oracle-integration-header p {
     font-size: 18px;
-    color: #555;
+    color: #ffffff;
 }
 
 .oracle-status {
@@ -28,7 +37,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
 }
 
 .oracle-updates {
