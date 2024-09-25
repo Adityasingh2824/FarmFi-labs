@@ -1,16 +1,26 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import Card from '../components/Card';
 import { faBuilding, faExchangeAlt, faLock, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import './Enterprise.css';
 
 const Enterprise = () => {
+    const navigate = useNavigate(); // Initialize useNavigate hook
+
     return (
         <div className="enterprise">
+            {/* Hero Section */}
             <header className="enterprise-header">
-                <h1>Enterprise Solutions</h1>
-                <p>FarmFi Labs provides a suite of enterprise-grade solutions designed to help businesses leverage blockchain technology in the agricultural sector. Our platform offers secure, transparent, and efficient tools for managing grain assets and participating in the global market.</p>
+                <div className="hero-overlay">
+                    <h1>Enterprise Solutions</h1>
+                    <p>Leverage the power of blockchain technology with FarmFi Labs' enterprise-grade solutions for managing grain assets and participating in global markets.</p>
+                    <button className="explore-btn" onClick={() => navigate('/solutions')}> {/* Navigate to Solutions page */}
+                        Explore Our Solutions
+                    </button>
+                </div>
             </header>
 
+            {/* Key Features Section */}
             <section className="enterprise-features">
                 <h2>Key Features for Enterprises</h2>
                 <div className="enterprise-features-grid">
@@ -18,40 +28,45 @@ const Enterprise = () => {
                         title="Asset Management"
                         value="Comprehensive"
                         icon={faBuilding}
-                        description="Manage and tokenize grain assets efficiently on a secure blockchain network."
+                        description="Efficiently manage and tokenize grain assets on our secure blockchain network."
                     />
                     <Card
                         title="DeFi Integration"
                         value="Innovative"
                         icon={faExchangeAlt}
-                        description="Access decentralized finance opportunities, including staking and lending."
+                        description="Unlock decentralized finance opportunities such as staking and lending."
                     />
                     <Card
                         title="Secure Transactions"
                         value="Encrypted"
                         icon={faLock}
-                        description="Ensure the security and integrity of transactions with advanced encryption."
+                        description="Protect transactions with advanced encryption for enhanced security."
                     />
                     <Card
                         title="Market Analytics"
                         value="Insightful"
                         icon={faChartLine}
-                        description="Utilize market analytics tools to make data-driven decisions."
+                        description="Use powerful analytics to make informed, data-driven business decisions."
                     />
                 </div>
             </section>
 
+            {/* Benefits Section */}
             <section className="enterprise-benefits">
                 <h2>Benefits for Your Business</h2>
                 <p>
-                    By integrating with FarmFi Labs, enterprises can enhance their operations with the latest blockchain technology. Our solutions offer transparency, security, and efficiency, enabling businesses to streamline asset management, optimize supply chains, and participate in the global marketplace with confidence.
+                    Integrate blockchain technology with your business operations using FarmFi Labs' cutting-edge solutions.
+                    Streamline asset management, optimize your supply chain, and tap into global markets with secure, transparent, and efficient tools designed for enterprises.
                 </p>
             </section>
 
+            {/* CTA Section */}
             <section className="enterprise-cta">
                 <h2>Get Started with FarmFi Labs</h2>
-                <p>If you're ready to take your business to the next level with blockchain technology, contact us to learn more about our enterprise solutions and how we can help you achieve your goals.</p>
-                <button className="contact-us">Contact Us</button>
+                <p>Ready to elevate your business with blockchain technology? Contact us to explore how our enterprise solutions can help you succeed.</p>
+                <button className="contact-us" onClick={() => navigate('/contact-us')}> {/* Navigate to Contact Us page */}
+                    Contact Us
+                </button>
             </section>
         </div>
     );

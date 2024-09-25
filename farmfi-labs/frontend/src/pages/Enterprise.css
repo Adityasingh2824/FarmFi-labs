@@ -1,45 +1,77 @@
 /* Enterprise.css */
 .enterprise {
     padding: 20px;
+    background-color: #f4f4f4;
 }
 
 .enterprise-header {
+    background-image: url('C:\Users\Aditya singh\FarmFi-labs\farmfi-labs\frontend\public\assets\agreimage.webp');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 300px;
+    color: #fff;
     text-align: center;
-    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
 }
 
 .enterprise-header h1 {
-    font-size: 36px;
-    color: #033a1c; /* Dark green color */
+    font-size: 40px;
     margin-bottom: 15px;
 }
 
 .enterprise-header p {
     font-size: 18px;
-    color: #555;
+    margin-bottom: 20px;
+}
+
+.explore-btn {
+    padding: 12px 30px;
+    background-color: #a1c045;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+    background-color: #8ea936;
 }
 
 .enterprise-features {
-    margin-bottom: 40px;
+    margin: 50px 0;
+    text-align: center;
 }
 
 .enterprise-features h2 {
-    font-size: 28px;
+    font-size: 36px;
     color: #033a1c;
-    text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .enterprise-features-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .enterprise-benefits {
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 10px;
     text-align: center;
-    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .enterprise-benefits h2 {
@@ -52,10 +84,12 @@
     font-size: 16px;
     color: #555;
     line-height: 1.6;
+    margin-bottom: 30px;
 }
 
 .enterprise-cta {
     text-align: center;
+    margin-top: 40px;
 }
 
 .enterprise-cta h2 {
@@ -73,14 +107,31 @@
 
 .contact-us {
     padding: 15px 30px;
-    background-color: #a1c045; /* Light green color */
+    background-color: #a1c045;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
+    transition: background-color 0.3s ease;
 }
 
 .contact-us:hover {
     background-color: #8ea936;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .enterprise-header h1 {
+        font-size: 32px;
+    }
+
+    .enterprise-header p {
+        font-size: 16px;
+    }
+
+    .enterprise-features-grid {
+        flex-direction: column;
+        align-items: center;
+    }
 }

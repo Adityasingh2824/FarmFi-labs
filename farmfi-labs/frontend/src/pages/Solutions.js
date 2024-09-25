@@ -1,52 +1,65 @@
 import React from 'react';
-import Card from '../components/Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSeedling, faExchangeAlt, faChartLine, faWarehouse } from '@fortawesome/free-solid-svg-icons';
 import './Solutions.css';
 
 const Solutions = () => {
     return (
         <div className="solutions">
+            {/* Enhanced Header with Background */}
             <header className="solutions-header">
-                <h1>Our Solutions</h1>
-                <p>FarmFi Labs offers a range of solutions tailored to the agricultural industry, leveraging blockchain technology to bring transparency, efficiency, and liquidity to grain trading and management.</p>
+                <div className="header-content">
+                    <h1>Our Solutions</h1>
+                    <p>
+                        FarmFi Labs leverages cutting-edge blockchain technology to offer transparency, efficiency, and liquidity to the agricultural industry. Explore our range of tailored solutions.
+                    </p>
+                </div>
             </header>
 
+            {/* Interactive Solutions Section */}
             <section className="solutions-overview">
                 <div className="solutions-grid">
-                    <Card
-                        title="Grain Tokenization"
-                        value="Seamless"
-                        icon={faSeedling}
-                        description="Convert your grain assets into digital tokens for easy trading and liquidity."
-                    />
-                    <Card
-                        title="Decentralized Finance (DeFi)"
-                        value="Integrated"
-                        icon={faExchangeAlt}
-                        description="Access DeFi services such as staking, lending, and borrowing using grain-backed tokens."
-                    />
-                    <Card
-                        title="Marketplace"
-                        value="Global"
-                        icon={faChartLine}
-                        description="Buy and sell grain tokens on our secure and transparent marketplace, reaching a global audience."
-                    />
-                    <Card
-                        title="Proof of Grain Reserve"
-                        value="Verified"
-                        icon={faWarehouse}
-                        description="Ensure that all tokens are backed by real-world grain reserves through our PoGR system."
-                    />
+                    {/* Grain Tokenization */}
+                    <div className="solution-card">
+                        <FontAwesomeIcon icon={faSeedling} className="solution-icon" />
+                        <h3>Grain Tokenization</h3>
+                        <p>Convert your grain assets into digital tokens, enabling easy trading and global liquidity.</p>
+                        <button className="learn-more-btn">Learn More</button>
+                    </div>
+                    
+                    {/* Decentralized Finance (DeFi) */}
+                    <div className="solution-card">
+                        <FontAwesomeIcon icon={faExchangeAlt} className="solution-icon" />
+                        <h3>Decentralized Finance (DeFi)</h3>
+                        <p>Unlock the power of DeFi with staking, lending, and borrowing using grain-backed tokens.</p>
+                        <button className="learn-more-btn">Learn More</button>
+                    </div>
+                    
+                    {/* Global Marketplace */}
+                    <div className="solution-card">
+                        <FontAwesomeIcon icon={faChartLine} className="solution-icon" />
+                        <h3>Global Marketplace</h3>
+                        <p>Trade tokens on our transparent marketplace, reaching a global audience of buyers and sellers.</p>
+                        <button className="learn-more-btn">Learn More</button>
+                    </div>
+                    
+                    {/* Proof of Grain Reserve */}
+                    <div className="solution-card">
+                        <FontAwesomeIcon icon={faWarehouse} className="solution-icon" />
+                        <h3>Proof of Grain Reserve</h3>
+                        <p>Ensure your tokens are backed by real-world grain reserves with our PoGR verification system.</p>
+                        <button className="learn-more-btn">Learn More</button>
+                    </div>
                 </div>
             </section>
 
+            {/* Why Choose Us Section */}
             <section className="solutions-details">
                 <h2>Why Choose Our Solutions?</h2>
                 <p>
-                    FarmFi Labs combines the power of blockchain with the needs of the agricultural industry to provide secure, transparent, and efficient solutions.
-                    Whether you're a farmer looking to tokenize your grains, an investor seeking new opportunities, or a merchant wanting to access a global market,
-                    our platform offers tools and services to help you achieve your goals.
+                    At FarmFi Labs, we merge the best of blockchain technology with agricultural needs, offering farmers, investors, and merchants secure and efficient tools to tokenize, trade, and manage grain assets.
                 </p>
+                <button className="cta-btn">Get Started</button> {/* Call-to-action */}
             </section>
         </div>
     );

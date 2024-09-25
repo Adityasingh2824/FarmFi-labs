@@ -4,26 +4,55 @@
 }
 
 .about h2 {
-    font-size: 28px;
-    color: #033a1c; /* Dark green color */
+    font-size: 32px;
+    color: #033a1c;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .about p {
-    font-size: 16px;
+    font-size: 18px;
     color: #555;
-    line-height: 1.6;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.icon-wrapper {
+    text-align: center;
     margin-bottom: 20px;
+}
+
+.mission-icon,
+.platform-icon,
+.technology-icon {
+    font-size: 3rem;
+    color: #a1c045;
 }
 
 .about-mission,
 .about-platform,
 .about-technology {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
+/* Team Section */
 .about-team {
+    margin-top: 50px;
     text-align: center;
+}
+
+.about-team h2 {
+    font-size: 32px;
+    color: #033a1c;
+    margin-bottom: 40px;
 }
 
 .team-grid {
@@ -34,23 +63,50 @@
 }
 
 .team-member {
-    max-width: 200px;
+    max-width: 220px;
     text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
 }
 
 .team-member img {
     width: 100%;
+    height: auto;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    border: 3px solid #a1c045;
 }
 
 .team-member h3 {
-    font-size: 18px;
+    font-size: 20px;
     color: #033a1c;
     margin-bottom: 5px;
 }
 
 .team-member p {
-    font-size: 14px;
+    font-size: 16px;
     color: #555;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .about p {
+        font-size: 16px;
+    }
+
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 100%;
+    }
 }

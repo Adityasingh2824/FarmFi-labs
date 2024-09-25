@@ -6,11 +6,15 @@ import './FinancialInstitutions.css';
 const FinancialInstitutions = () => {
     return (
         <div className="financial-institutions">
+            {/* Hero Section */}
             <header className="financial-institutions-header">
-                <h1>Solutions for Financial Institutions</h1>
-                <p>FarmFi Labs offers a suite of secure and transparent solutions tailored for financial institutions. Our platform provides opportunities to invest in grain-backed assets, manage transactions securely, and access in-depth market analytics.</p>
+                <div className="hero-content">
+                    <h1>Solutions for Financial Institutions</h1>
+                    <p>Explore secure and transparent investment opportunities with FarmFi Labs. Harness the power of blockchain to manage grain-backed assets and access advanced analytics.</p>
+                </div>
             </header>
 
+            {/* Key Features Section */}
             <section className="financial-features">
                 <h2>Key Features for Financial Institutions</h2>
                 <div className="financial-features-grid">
@@ -41,16 +45,18 @@ const FinancialInstitutions = () => {
                 </div>
             </section>
 
+            {/* Benefits Section */}
             <section className="financial-benefits">
                 <h2>Benefits for Financial Institutions</h2>
                 <p>
-                    Our platform offers financial institutions the ability to diversify portfolios with stable, asset-backed tokens. With FarmFi Labs, you gain access to a secure and transparent marketplace, in-depth analytics, and tools designed to enhance investment strategies and risk management.
+                    FarmFi Labs empowers financial institutions to diversify portfolios using asset-backed tokens. Our platform provides access to a secure marketplace, in-depth analytics, and powerful tools to optimize investment strategies.
                 </p>
             </section>
 
+            {/* Call-to-Action Section */}
             <section className="financial-cta">
                 <h2>Partner with FarmFi Labs</h2>
-                <p>Ready to explore new opportunities in the agricultural finance sector? Contact us to learn how FarmFi Labs can help your institution harness the power of blockchain technology.</p>
+                <p>Explore how FarmFi Labs can help your institution leverage blockchain technology in agricultural finance. Contact us to get started.</p>
                 <button className="contact-us">Contact Us</button>
             </section>
         </div>

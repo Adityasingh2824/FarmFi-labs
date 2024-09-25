@@ -1,62 +1,121 @@
-import React from 'react';
-import Card from '../components/Card';
-import { faSeedling, faExchangeAlt, faChartLine, faWarehouse } from '@fortawesome/free-solid-svg-icons';
-import './Solutions.css';
+import React, { useState } from 'react';
+import './Settings.css';
 
-const Solutions = () => {
+const Settings = () => {
+    const [emailNotifications, setEmailNotifications] = useState(true);
+    const [twoFactorAuth, setTwoFactorAuth] = useState(false);
+    const [storageLimit, setStorageLimit] = useState(50);
+    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Toggle Email Notifications
+    const handleToggleEmailNotifications = () => {
+        setEmailNotifications(!emailNotifications);
+    };
+
+    // Toggle Two-Factor Authentication
+    const handleToggleTwoFactorAuth = () => {
+        setTwoFactorAuth(!twoFactorAuth);
+    };
+
+    // Dark Mode Toggle
+    const handleToggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+    };
+
+    // Handle storage limit slider
+    const handleStorageLimitChange = (e) => {
+        setStorageLimit(e.target.value);
+    };
+
+    // Modal control for deleting the account
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+    const handleAccountDeletion = () => {
+        // Logic to delete the account
+        alert('Account Deleted');
+        closeModal();
+    };
+
     return (
-        <div className="solutions">
-            {/* Enhanced Header Section */}
-            <header className="solutions-header">
-                <div className="header-overlay">
-                    <h1>Our Solutions</h1>
-                    <p>
-                        Discover how FarmFi Labs is transforming agriculture with blockchain technology. We bring transparency, efficiency, and liquidity to grain trading and management.
-                    </p>
-                </div>
+        <div className={`settings ${isDarkMode ? 'dark-mode' : ''}`}>
+            <header className="settings-header">
+                <h1>Settings</h1>
+                <p>Manage your account settings, preferences, and notifications.</p>
             </header>
 
-            {/* Solutions Overview Section */}
-            <section className="solutions-overview">
-                <h2>Our Core Solutions</h2>
-                <div className="solutions-grid">
-                    <Card
-                        title="Grain Tokenization"
-                        value="Seamless"
-                        icon={faSeedling}
-                        description="Easily convert grain assets into digital tokens, unlocking new financial opportunities."
-                    />
-                    <Card
-                        title="Decentralized Finance (DeFi)"
-                        value="Integrated"
-                        icon={faExchangeAlt}
-                        description="Access a decentralized ecosystem for staking, lending, and borrowing using grain-backed tokens."
-                    />
-                    <Card
-                        title="Global Marketplace"
-                        value="Reach"
-                        icon={faChartLine}
-                        description="Trade your grain tokens on a secure marketplace, connecting farmers and buyers globally."
-                    />
-                    <Card
-                        title="Proof of Grain Reserve (PoGR)"
-                        value="Verified"
-                        icon={faWarehouse}
-                        description="Guarantee token value with verified grain reserves through our trusted PoGR system."
-                    />
+            <section className="settings-content">
+                {/* Account Settings */}
+                <div className="settings-group">
+                    <h2>Account Settings</h2>
+                    <div className="settings-item">
+                        <label>Email Notifications</label>
+                        <div className="toggle-switch" onClick={handleToggleEmailNotifications}>
+                            <input type="checkbox" checked={emailNotifications} readOnly />
+                            <span className="slider"></span>
+                        </div>
+                    </div>
+
+                    <div className="settings-item">
+                        <label>Two-Factor Authentication</label>
+                        <div className="toggle-switch" onClick={handleToggleTwoFactorAuth}>
+                            <input type="checkbox" checked={twoFactorAuth} readOnly />
+                            <span className="slider"></span>
+                        </div>
+                    </div>
+
+                    <div className="settings-item">
+                        <label>Storage Limit: {storageLimit}GB</label>
+                        <input
+                            type="range"
+                            min="10"
+                            max="200"
+                            value={storageLimit}
+                            onChange={handleStorageLimitChange}
+                        />
+                    </div>
+                </div>
+
+                {/* Appearance Settings */}
+                <div className="settings-group">
+                    <h2>Appearance Settings</h2>
+                    <div className="settings-item">
+                        <label>Dark Mode</label>
+                        <div className="toggle-switch" onClick={handleToggleDarkMode}>
+                            <input type="checkbox" checked={isDarkMode} readOnly />
+                            <span className="slider"></span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Danger Zone */}
+                <div className="settings-group danger-zone">
+                    <h2>Danger Zone</h2>
+                    <button className="delete-account-btn" onClick={openModal}>
+                        Delete Account
+                    </button>
                 </div>
             </section>
 
-            {/* Why Choose Us Section */}
-            <section className="solutions-details">
-                <h2>Why Choose Our Solutions?</h2>
-                <p>
-                    At FarmFi Labs, we blend the best of blockchain with the agricultural sector’s needs, creating a secure and efficient ecosystem. Whether you’re a farmer, investor, or merchant, our platform empowers you with the tools you need to grow.
-                </p>
-                <a href="/contact-us" className="cta-button">Contact Us</a> {/* Call-to-action button */}
-            </section>
+            {/* Account Deletion Modal */}
+            {isModalOpen && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <h2>Delete Account</h2>
+                        <p>Are you sure you want to permanently delete your account? This action cannot be undone.</p>
+                        <div className="modal-actions">
+                            <button className="cancel-btn" onClick={closeModal}>
+                                Cancel
+                            </button>
+                            <button className="confirm-btn" onClick={handleAccountDeletion}>
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
 
-export default Solutions;
+export default Settings;

@@ -1,3 +1,5 @@
+
+
 module <ADDRESS>::GrainToken {
     use std::signer;
     use std::vector;
@@ -5,87 +7,116 @@ module <ADDRESS>::GrainToken {
     use std::error;
     use std::coin;
 
-    // Define the error codes
+    // Error codes
     const ENOT_AUTHORIZED: u64 = 1;
     const EINSUFFICIENT_BALANCE: u64 = 2;
+    const ENO_CROP_FOUND: u64 = 3;
 
-    // The GrainToken resource type
-    struct GrainToken has key, store {
-        total_supply: u64,
+    // Resource representing a batch of tokenized crops
+    struct CropToken has key, store {
+        total_supply: u64,   // Total supply of tokenized crops
+        crop_type: string::String, // Type of crop (e.g., wheat, rice)
+        unit_value: u64,     // Value of each tokenized unit
     }
 
-    // Resource to hold user balances
-    struct Balance has key {
-        balance: u64,
+    // Resource to hold user balances for specific crop tokens
+    struct CropBalance has key {
+        balance: u64,    // User's balance of crop tokens
+        crop_type: string::String, // Type of crop (each crop has a separate balance)
     }
 
-    // Initialize the GrainToken with a specified initial supply
-    public fun initialize(account: &signer, initial_supply: u64) {
-        let creator_address = signer::address_of(account);
-        move_to(account, GrainToken {
+    // Initialize a new crop token with a specified type and initial supply
+    public fun initialize_crop(
+        account: &signer, 
+        crop_type: string::String, 
+        initial_supply: u64, 
+        unit_value: u64
+    ) {
+        // Move the CropToken to the account's address
+        move_to(account, CropToken {
             total_supply: initial_supply,
+            crop_type: crop_type,
+            unit_value: unit_value,
         });
 
-        // Create initial balance for the creator
-        move_to(account, Balance {
+        // Initialize the creator's balance for the crop
+        move_to(account, CropBalance {
             balance: initial_supply,
+            crop_type: crop_type,
         });
     }
 
-    // Mint new tokens and add to the total supply
-    public fun mint(account: &signer, amount: u64) {
-        let grain_token = borrow_global_mut<GrainToken>(signer::address_of(account));
-        grain_token.total_supply = grain_token.total_supply + amount;
+    // Mint new crop tokens (e.g., after a new harvest)
+    public fun mint_crop(account: &signer, amount: u64, crop_type: string::String) {
+        let crop_token = borrow_global_mut<CropToken>(signer::address_of(account));
 
-        let balance = borrow_global_mut<Balance>(signer::address_of(account));
+        // Ensure that the minted crop type matches the existing one
+        assert!(crop_token.crop_type == crop_type, ENO_CROP_FOUND);
+
+        crop_token.total_supply = crop_token.total_supply + amount;
+
+        // Update the user's balance for the specific crop
+        let balance = borrow_global_mut<CropBalance>(signer::address_of(account));
         balance.balance = balance.balance + amount;
     }
 
-    // Burn tokens and reduce the total supply
-    public fun burn(account: &signer, amount: u64) {
-        let grain_token = borrow_global_mut<GrainToken>(signer::address_of(account));
-        let balance = borrow_global_mut<Balance>(signer::address_of(account));
+    // Burn crop tokens (e.g., after consumption or sale)
+    public fun burn_crop(account: &signer, amount: u64, crop_type: string::String) {
+        let crop_token = borrow_global_mut<CropToken>(signer::address_of(account));
+        let balance = borrow_global_mut<CropBalance>(signer::address_of(account));
 
-        if (balance.balance < amount) {
-            abort EINSUFFICIENT_BALANCE;
-        }
+        // Ensure that the burn request matches the crop type and sufficient balance exists
+        assert!(crop_token.crop_type == crop_type, ENO_CROP_FOUND);
+        assert!(balance.balance >= amount, EINSUFFICIENT_BALANCE);
 
-        grain_token.total_supply = grain_token.total_supply - amount;
+        crop_token.total_supply = crop_token.total_supply - amount;
         balance.balance = balance.balance - amount;
     }
 
-    // Transfer tokens between users
-    public fun transfer(from: &signer, to: address, amount: u64) {
-        let sender_balance = borrow_global_mut<Balance>(signer::address_of(from));
-        if (sender_balance.balance < amount) {
-            abort EINSUFFICIENT_BALANCE;
-        }
+    // Transfer crop tokens between users
+    public fun transfer_crop(from: &signer, to: address, amount: u64, crop_type: string::String) {
+        let sender_balance = borrow_global_mut<CropBalance>(signer::address_of(from));
+        
+        // Ensure the transfer is of the correct crop type and has sufficient balance
+        assert!(sender_balance.crop_type == crop_type, ENO_CROP_FOUND);
+        assert!(sender_balance.balance >= amount, EINSUFFICIENT_BALANCE);
 
         sender_balance.balance = sender_balance.balance - amount;
 
-        if (!exists<Balance>(to)) {
-            move_to(&signer::address_of(from), Balance {
+        // Check if the recipient has a balance for the crop, if not, create one
+        if (!exists<CropBalance>(to)) {
+            move_to(&signer::address_of(from), CropBalance {
                 balance: amount,
+                crop_type: crop_type,
             });
         } else {
-            let recipient_balance = borrow_global_mut<Balance>(to);
+            let recipient_balance = borrow_global_mut<CropBalance>(to);
             recipient_balance.balance = recipient_balance.balance + amount;
         }
     }
 
-    // Get the balance of a specific account
-    public fun get_balance(account: address): u64 {
-        if (!exists<Balance>(account)) {
+    // Get the balance of a specific user's crop tokens
+    public fun get_balance(account: address, crop_type: string::String): u64 {
+        if (!exists<CropBalance>(account)) {
             return 0;
         }
 
-        let balance = borrow_global<Balance>(account);
+        let balance = borrow_global<CropBalance>(account);
+
+Manav Personal, [24-09-2024 21:23]
+// Ensure the request is for the correct crop type
+        assert!(balance.crop_type == crop_type, ENO_CROP_FOUND);
+
         balance.balance
     }
 
-    // Get the total supply of the GrainToken
-    public fun get_total_supply(): u64 acquires GrainToken {
-        let grain_token = borrow_global<GrainToken>(@0x1);
-        grain_token.total_supply
+    // Get the total supply of a specific crop token
+    public fun get_total_supply(crop_type: string::String): u64 acquires CropToken {
+        let crop_token = borrow_global<CropToken>(@0x1);
+
+        // Ensure the crop type exists
+        assert!(crop_token.crop_type == crop_type, ENO_CROP_FOUND);
+
+        crop_token.total_supply
     }
 }
