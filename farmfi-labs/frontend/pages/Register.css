@@ -1,0 +1,150 @@
+/* General form container styling */
+.register-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 20px;
+    box-sizing: border-box;
+}
+
+/* Headings and form subtitles */
+h2 {
+    font-size: 28px;
+    color: #004d26;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.register-subtitle {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Input fields styling */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #33a85c;
+    box-shadow: 0 0 5px rgba(51, 168, 92, 0.3);
+    outline: none;
+}
+
+/* File input styling */
+.input-group input[type="file"] {
+    padding: 6px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Button styling */
+.register-button, .wallet-connect-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Primary button color */
+.register-button {
+    background-color: #33a85c;
+    color: #fff;
+}
+
+.register-button:hover {
+    background-color: #2d944f;
+}
+
+.wallet-connect-button {
+    background-color: #006dbf;
+    color: #fff;
+}
+
+.wallet-connect-button:hover {
+    background-color: #005b9f;
+}
+
+/* Disabled button state */
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Footer link */
+.register-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.register-footer a {
+    color: #006b3d;
+    text-decoration: none;
+}
+
+.register-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Ensure that the content stays above the footer */
+html, body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* Footer styling */
+footer {
+    background-color: #004d26;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
